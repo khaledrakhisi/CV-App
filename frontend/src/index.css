@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background-color: #EAF6F6;
+    text-align: center;
+    color: #40514e;
+  }
+  
+  p{
+    line-height: 1.5;
+  }
+  
+  a{
+    color: #11999e;
+    font-family: "Montserrat", sans-serif;
+    margin: 10px 10px;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #eaf6f6;
+  }
+
+  
+* {
+    box-sizing: border-box;
+  }
+  
+ 
