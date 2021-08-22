@@ -1,31 +1,23 @@
  
   .top_container{
-    background-color: #dbf6e9;
+    /* background-color: #dbf6e9; */
+    background-color:transparent;
+    background-size:100% 100%;
     position: relative;
-    margin-top: 4rem;
-    padding-top: 4rem;
-    height: calc(80vh - 4rem);
-    width: 100%;
+    margin: 4rem auto 0;
+    padding-top: 2rem;
+    height: calc(70vh - 4rem);
+    width: 85%;    
   }
   
   .middle_container{
     position: relative;
+    background-color:transparent;
+    background-size:100% 100%;
     padding: 0;
     margin: 0;
-    background-color: darkred;
+    background-color: #d1f1e2;
     height: 20vh;    
-  }
-  
-  .bottom_container{
-    background-color: #66bfbf;
-    padding: 50px 0 20px;
-  }
-  
-  .copyrighttext{
-    color: #EAF6F6;
-    font-size: .8rem;
-    font-family: "Montserrat", sans-serif;
-    padding: 20px 0 0 0;
   }
   
   .hr_dotted {
@@ -52,18 +44,18 @@
   
   .title_description{
     font-family: 'New Tegomin', serif;
-    font-size: 1.5rem;
-    color: #9ecca4;
-    font-weight: normal;
+    font-size: 1rem;
+    color: #069caa;
+    font-weight:lighter;
     line-height: 1;
   }
   .title_like{
     padding: .5rem;
-    font-size: 1.5rem;    
-    background-color: #a5d4ac;
-    color: black;
+    font-size: 1rem;    
+    background-color: #0ab7c7;
+    color: 007580;
     /* border : 1px solid red; */
-    width: 5rem;
+    width: 4rem;
     border-radius: 8px;
     margin: auto auto 7rem auto;
     cursor: pointer;
@@ -129,8 +121,9 @@
     /* top: 63%; */
     /* transform: translate(-50%, -50%); */
     margin: 0 auto;   
-    width: 30rem;
+    width: 20rem;
     bottom: 50%;
+    z-index: 2;
   }
 
   .brandenburg{
@@ -138,36 +131,74 @@
     right: 0;
     /* top: 62%; */
     margin: 0 auto;   
-    width: 30rem;
-    bottom: 50%;
+    width: 15rem;
+    bottom: 48%;
+    z-index: 2;
+  }
+
+  @keyframes animation_wolke {
+    from {left: 10vw;}
+    to{left: 70vw;}
   }
   
-  .wolke1{
-    /* width: 12rem; */
-    /* height: 7rem; */
+  .wolke1{    
     position:absolute;
-    right:50rem;
-    top: 5rem;
+    left:10rem;
+    top: 1rem;
+    animation: animation_wolke 19s infinite linear;
+    width: 15%;
   }
   .wolke2{
-    position: absolute;
-    /* width: 10%; */
-    /* height: 6rem; */
-    left: 50rem;
-    bottom: 9rem;
+    position:absolute;
+    right:10rem;
+    top: 33%;
+    animation: animation_wolke 15s infinite linear;
+    width: 15%;
   }
   .wolke3{
-    position: absolute;
-    /* width: 11rem; */
-    /* height: 6rem; */
-    left: 20rem;
-    bottom: 13rem;
+    position:absolute;
+    right:15rem;
+    top: 60%;
+    animation: animation_wolke 25s infinite linear;
+    width: 15%;
   }
+  
   .baum1{
     position: absolute;
-    /* width: 11rem; */    
-    left: 20rem;
-    bottom: 0;
+    right: 30%;
+    /* top: 62%; */
+    /* margin: 0 auto;     */
+    bottom: 53%;
+    width: 5rem;
+  }
+  .baum2{
+    position: absolute;
+    left: 0;
+    /* top: 62%; */
+    /* margin: 0 auto;     */
+    bottom: 58%;
+    width: 5rem;
+  }
+  .baum3{
+    position: absolute;
+    right: 10rem;
+    /* top: 62%; */
+    /* margin: 0 auto;     */
+    bottom: 60%;
+  }
+  .baum4{
+    position: absolute;
+    right: 1%;
+    /* top: 62%; */
+    /* margin: 0 auto;     */
+    bottom: 58%;
+  }
+  .baum5{
+    position: absolute;
+    left: 4.2rem;
+    /* top: 62%; */
+    /* margin: 0 auto;     */
+    bottom: 60%;
   }
   
   .skill-row{
@@ -241,6 +272,7 @@
   @media (min-width: 768px) {
     .top_container{
       /* background-color: goldenrod; */
+      height: calc(70vh - 4rem);
     }
     .title{
       font-size: 3.5rem;
@@ -258,10 +290,52 @@
       bottom: 50%;
     }
     .brandenburg{
-      position: absolute;
-      right: 15%;      
-      margin: 0 auto;   
+      right: 15%;
       width: 30%;
-      bottom: 50%;
+      bottom: 48%;
+    }
+    .wolke1, .wolke2, .wolke3{      
+      /* top: 60%; */
+      width: 8%;
+    }    
+    .baum1{
+      position: absolute;
+      right: 40%;
+      /* top: 62%; */
+      /* margin: 0 auto;     */
+      bottom: 60%;
+      width: 8%;
+    }
+    .baum2{
+      position: absolute;
+      left: 15%;
+      /* top: 62%; */
+      /* margin: 0 auto;     */
+      bottom: 58%;
+      width: 8%;
+    }
+    .baum3{
+      position: absolute;
+      right: 25rem;
+      /* top: 62%; */
+      /* margin: 0 auto;     */
+      bottom: 60%;
+      width: 10%;
+    }
+    .baum4{
+      position: absolute;
+      right: 13%;
+      /* top: 62%; */
+      /* margin: 0 auto;     */
+      bottom: 58%;
+      width: 9%;
+    }
+    .baum5{
+      position: absolute;
+      left: 20%;
+      /* top: 62%; */
+      /* margin: 0 auto;     */
+      bottom: 60%;
+      width: 6%;
     }
   }

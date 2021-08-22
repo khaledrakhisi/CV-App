@@ -6,9 +6,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: #dbf6e9;
+    background: #d1f1e2;
     /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26); */
-    border-bottom: 1px solid #c1cec8;
+    border-bottom: 1px solid #ecf7f7;
     padding: 0 1rem;
     z-index: 5;
   }

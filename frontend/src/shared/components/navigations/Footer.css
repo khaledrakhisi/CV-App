@@ -1,0 +1,19 @@
+.bottom_container{
+    position: relative;
+    bottom: 0;
+    background-color : transparent;
+    /* padding: 50px 0 20px; */
+    /* height: 20vh;     */
+  }
+  
+  .copyrighttext{
+    display: block;
+    color: #069caa;
+    font-size: .8rem;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+  }
+
+  .footer_icons{
+      display: inline;
+  }

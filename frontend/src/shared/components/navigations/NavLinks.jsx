@@ -8,17 +8,22 @@ function NavLinks() {
     <ul className="nav-links">
       <li>
         <NavLink to="/" exact>
-          My works
+          works
         </NavLink>
       </li>
       <li>
         <NavLink to="/" exact>
-          About me
+          about
         </NavLink>
       </li>
       <li>
         <NavLink to="/" exact>
-          Blog
+          blog
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/" exact>
+          notes
         </NavLink>
       </li>
     </ul>
