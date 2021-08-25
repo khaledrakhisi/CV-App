@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
 import './MainNavigation.css';
+import FlagDropdown from "../UIElements/FlagDropdown";
 // import InstagramIcon from '@material-ui/icons/Instagram';
 // import YouTubeIcon from '@material-ui/icons/YouTube';
 // import MailIcon from '@material-ui/icons/Mail';
@@ -23,6 +24,7 @@ function MainNavigation() {
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
+        <FlagDropdown/>
         {/* <h1 className="main-navigation__contact">
           <Link to="/"><InstagramIcon className="instagram_icon"/></Link>
         </h1>

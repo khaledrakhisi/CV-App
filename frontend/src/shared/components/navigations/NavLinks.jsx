@@ -7,22 +7,22 @@ function NavLinks() {
   return (
     <ul className="nav-links">
       <li>
-        <NavLink to="/" exact>
+        <NavLink to="/works" exact>
           works
         </NavLink>
       </li>
       <li>
-        <NavLink to="/" exact>
+        <NavLink to="/about" exact>
           about
         </NavLink>
       </li>
       <li>
-        <NavLink to="/" exact>
+        <NavLink to="/blog" exact>
           blog
         </NavLink>
       </li>
       <li>
-        <NavLink to="/" exact>
+        <NavLink to="/notes" exact>
           notes
         </NavLink>
       </li>

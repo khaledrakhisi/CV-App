@@ -9,6 +9,7 @@ function HomePage() {
         <h1 className="title">I'm khaled</h1>
         <h3 className="title_description">a Software Developer</h3>
         <h3 className="title_like">🤍 1</h3>
+        <div className="sonne" style={{backgroundImage:`url(${process.env.PUBLIC_URL + "images/homepage/sonne.png"})`}}></div>
         <img className="wolke1" src={process.env.PUBLIC_URL + "images/homepage/wolke3.png"} alt=""/>        
         <img className="wolke2" src={process.env.PUBLIC_URL + "images/homepage/wolke4.png"} alt=""/>        
         <img className="wolke3" src={process.env.PUBLIC_URL + "images/homepage/wolke3.png"} alt=""/>        
