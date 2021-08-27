@@ -1,0 +1,123 @@
+.modal {
+      z-index: 100;
+      position: fixed;
+      top: 15vh;
+      left: 10%;
+      width: 80%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+      /* border-radius: 8px; */
+      border-radius: 8px;
+      /* border-top-right-radius: 3%; */
+    }
+  
+    @media (min-width: 768px) {
+      .modal {
+        left: calc(50% - 20.5rem);
+        width: 41rem;
+      }
+    }
+    
+    .modal__header {
+      width: 100%;
+      height: 5%;
+      padding: .1rem 0.5rem;
+      background: #069caa;
+      color: white;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      cursor: move;
+    }
+
+    .modal__header-closebutton{
+      display: inline;
+      position: absolute;
+      right: 1rem;
+      top: .4rem;
+      cursor: pointer;
+      text-align: right;  
+    }
+    .close_icon{
+      color: white;
+      /* transition: all 0.5s ease; */
+    }
+    .close_icon:hover{
+      color: red;
+      -webkit-transition: color 500ms linear;
+      -ms-transition: color 500ms linear;
+      transition: color 500ms linear;
+    }
+
+    .modal__header h2 {
+      margin: 0.5rem;
+      color: white;
+      font-size: 1rem;
+
+      /* make title non-selectable */
+      -webkit-user-select: none;  
+      -moz-user-select: none;    
+      -ms-user-select: none;      
+      user-select: none;
+    }
+    
+    .modal__content {
+      padding: .3rem 0.5rem;
+      text-align: left;
+    }
+    .modal__content h3{
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+    .modal__content p{
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .modal__footer {
+      padding: 1rem 0.5rem;
+      text-align: left;
+      font-size: .7rem;
+    }
+    
+    .modal-enter {
+      transform: translateY(-10rem);
+      opacity: 0;
+    }
+    
+    .modal-enter-active {
+      transform: translateY(0);
+      opacity: 1;
+      transition: all 200ms;
+    }
+    
+    .modal-exit {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .modal-exit-active {
+      transform: translateY(-10rem);
+      opacity: 0;
+      transition: all 200ms;
+    }
+
+    /*Another animation*/
+    /* .alert-enter {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    .alert-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 300ms, transform 300ms;
+    }
+    .alert-exit {
+      opacity: 1;
+    }
+    .alert-exit-active {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 300ms, transform 300ms;
+    }
+     */
+    

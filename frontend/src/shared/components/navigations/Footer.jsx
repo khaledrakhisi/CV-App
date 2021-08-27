@@ -8,7 +8,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div class="bottom_container">
+    <div className="bottom_container">
       <h1 className="footer_icons">
         <Link to="/">
           <InstagramIcon className="instagram_icon" />

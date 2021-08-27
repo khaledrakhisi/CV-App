@@ -4,8 +4,45 @@
     padding: 0;
     width: 90%;
     text-align: center;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     /* max-width: 40rem; */
     /* background-color: blue; */
   }
-  
+
+  /* .item-enter {
+    opacity: 0;
+  }
+  .item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  .item-leave {
+    opacity: 1;
+  }
+  .item-leave-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  } */
+
+  /* .fade-enter{
+    opacity: 0;
+  }
+  .fade-enter-active{
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  .fade-leave{
+    opacity: 1;
+  }
+  .fade-leave-active{
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
+  .fade-appear{
+    opacity: 0;    
+  }
+  .fade-appear-active{
+    opacity: 1;
+    transition: opacity 500ms ease-out;    
+    /* transition-delay: 1000ms; 
+  } */

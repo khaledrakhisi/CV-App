@@ -155,8 +155,20 @@
 }
 
   @keyframes animation_wolke {
-    from {left: 10vw;}
-    to{left: 70vw;}
+    0% {
+      left: 10vw;
+      opacity: 0;
+    }
+    5%{
+      opacity: 1;
+    }
+    95%{
+      opacity: 1;
+    }
+    100%{
+      left: 70vw;
+      opacity: 0;
+    }
   }
   
   .wolke1{    
@@ -271,20 +283,6 @@
     transform: translateX(-100%);
     opacity: 0;
     transition: all 200ms;
-  }
-
-  .instagram_icon:hover{
-    color: orange;
-  }
-  .youtube_icon:hover{
-    color: red;
-  }
-  .twitter_icon:hover{
-    color: blue;
-  }
-
-  .mail_icon:hover{
-    color: green;
   }
   
   @media (min-width: 768px) {
