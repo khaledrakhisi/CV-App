@@ -1,43 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import WorkItem from "./WorkItem";
 import Card from "../../../shared/components/UIElements/Card";
+import { AuthContext } from "../../../shared/components/context/AuthContext";
+
 import "./WorksList.css";
 
 function WorksList(props) {
+  const auth = useContext(AuthContext);
+
   if (props.items.length === 0) {
     return (
-      <div className="place-list center">
-        <Card>
-          <h2>The list is empty.</h2>
-          {/* <Button to="/places/new">Create One?</Button> */}
-        </Card>
-      </div>
+      <React.Fragment>
+        <div className="place-list center">
+          <Card>
+            <h2>The list is empty.</h2>
+            {/* <Button to="/places/new">Create One?</Button> */}
+          </Card>
+        </div>
+      </React.Fragment>
     );
   }
 
-  console.log(props.items[0].technicalInfo);
-
   const DELAY = 200;
+
   const populatedItems = (
     <ul className="place-list">
       {props.items.map((item, i) => (
-       
-          <WorkItem
-            id={item.id}
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            images={item.images}
-            contractor={item.contractor}
-            url={item.url}
-            duration={item.duration}
-            showEditButtons={true}
-            tags={item.tags}
-            displayDelay={DELAY * i}
-            technicalInfo={item.technicalInfo}
-          />
-       
+        <WorkItem
+          id={item.id}
+          key={item.id}
+          title={item.title}
+          description={item.description}
+          images={item.images}
+          contractor={item.contractor}
+          links={item.links}
+          duration={item.duration}
+          showEditButtons={!!auth.loggedinUser}
+          tags={item.tags}
+          displayDelay={DELAY * i}
+          technicalInfo={item.technicalInfo}
+        />
       ))}
     </ul>
   );

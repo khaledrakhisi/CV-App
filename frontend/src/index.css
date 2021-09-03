@@ -2,7 +2,7 @@
 
 body {
     font-family: "Montserrat", sans-serif;
-    margin: 0;
+    margin: 0 0 5rem 0;
     background-color: #dbf6e9;
     text-align: center;
     color: #40514e;
@@ -12,15 +12,12 @@ body {
     line-height: 1.5;
   }
   
-  a{
-    color: #11999e;
-    font-family: "Montserrat", sans-serif;
-    margin: 10px 10px;
-    text-decoration: none;
+  /* a{
+    
   }
   a:hover{
-    color: #eaf6f6;
-  }
+    
+  } */
 
   
 * {

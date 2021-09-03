@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import FlagDropdown from "../UIElements/FlagDropdown";
 import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
-import './MainNavigation.css';
-import FlagDropdown from "../UIElements/FlagDropdown";
-// import InstagramIcon from '@material-ui/icons/Instagram';
-// import YouTubeIcon from '@material-ui/icons/YouTube';
-// import MailIcon from '@material-ui/icons/Mail';
 
-function MainNavigation() {
+import './MainNavigation.css';
+
+function MainNavigation(props) {
   return (
     <React.Fragment>
       <MainHeader>
@@ -22,18 +20,10 @@ function MainNavigation() {
           <Link to="/">KHALED</Link>
         </h1>
         <nav className="main-navigation__header-nav">
-          <NavLinks />
+          <NavLinks language={props.language}/>
         </nav>
-        <FlagDropdown/>
-        {/* <h1 className="main-navigation__contact">
-          <Link to="/"><InstagramIcon className="instagram_icon"/></Link>
-        </h1>
-        <h1 className="main-navigation__contact">
-          <Link to="/"><YouTubeIcon className="youtube_icon"/></Link>
-        </h1>
-        <h1 className="main-navigation__contact">
-          <Link to="/"><MailIcon className="mail_icon"/></Link>
-        </h1>                   */}
+        <FlagDropdown language={props.language} onChange={props.onLanguageSelect}/>
+
       </MainHeader>
     </React.Fragment>
   );

@@ -32,6 +32,10 @@
   .button--borderTopLeftRoundCorner{
     border-top-left-radius: 4px;
   }
+
+  .button--borderTopRightRoundCorner{
+    border-top-right-radius: 4px;
+  }
   
   .button--inverse {
     background: transparent;

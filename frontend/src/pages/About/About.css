@@ -1,0 +1,169 @@
+/* ------------------------------------------------------------------ */
+/* c. About Section
+/* ------------------------------------------------------------------ */
+
+#about {
+    /* background: #d1f1e2; */
+    /* padding-top: 96px; */
+    /* padding-bottom: 66px; */
+    overflow: hidden;
+    width: 100%;
+    /* height:90vh; */
+    margin-bottom: 4rem;
+ }
+
+ @keyframes h2Animation {
+    0% {
+      opacity: 0;
+      transform: translateX(-15px);
+      /* transform: scale(0); */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      /* transform: scale(1); */
+    }
+  }
+ 
+ #about .download a, #about .download a:visited  { color: #fff; }
+ #about .download a:hover, #about .download a:focus { color: #11ABB0; }
+ 
+ #about h2 {
+    font: 22px/30px 'opensans-bold', sans-serif;
+    color: #0ab7c7;
+    margin-bottom: 12px;
+    
+    opacity: 0;
+    animation: h2Animation 500ms forwards;
+ }
+
+ #about p {
+    margin: 0;
+    line-height: 28px;
+    color: #11999e;
+
+    opacity: 0;
+    animation: fadeInAnimation 2s forwards;
+ }
+ #about .profile-pic {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+
+    opacity: 0;
+    animation: h2Animation 500ms forwards;
+ }
+ #about .contact-details { width: 41.66667%; }
+ #about .download {
+    /* width: 58%; */
+    padding-top: 6px;
+ }
+ #about .main-col { padding-right: 5%; }
+ #about .download .button {
+    margin-top: 6px;
+    background: #11999e;
+ }
+ #about .download .button:hover {
+    background: #55ebf0;
+    color: #2B2B2B;
+ }
+ #about .download .button i {
+    margin-right: 15px;
+    font-size: 20px;
+ }
+
+/* Create two equal columns that floats next to each other */
+.column1 {
+    float: left;
+    width: 24%;
+    height: 100%;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .column2 {
+    float: left;
+    width: 70%;
+    padding: 10px;
+    text-align: left;
+  }
+ 
+  .row{
+    padding: 1rem 2rem 1rem 5rem;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    height: 100%;    
+  }
+
+  .download span{
+    margin-top: 20px;
+  }
+
+  #about .button, #about .button:visited, #about button, #about input[type="submit"], #about input[type="reset"], #about input[type="button"] {
+    font: 16px/30px 'opensans-bold', sans-serif;
+    background: #11ABB0;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 0;
+    color: #fff;
+    padding: 12px 20px;
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.social_icons{
+  margin: 1rem .5rem .3rem;
+  list-style: none outside;
+  padding: 0; 
+}
+.social_icons li{
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0;
+}
+.social_icon{
+    /* display: inline; */
+    /* margin: 1rem .5rem; */
+    height: 5rem;
+    color: #013c8a;    
+}
+
+
+/* div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+} */
+
+@media (max-width:800px) {
+    .hidden {
+        display: none;
+    }
+    .column2, .column1{
+        width: 100%;
+    }
+    .row{
+        padding: 1rem;
+      }
+}

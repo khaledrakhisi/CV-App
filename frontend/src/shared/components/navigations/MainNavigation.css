@@ -35,6 +35,9 @@
     margin-left: calc(50vw - 10rem);
     font-size: 1.5rem;
   }
+  .main-navigation__title a:hover {
+    color: #ffffff;    
+  }
   
   .main-navigation__header-nav {
     display: none;

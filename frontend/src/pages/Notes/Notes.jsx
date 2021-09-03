@@ -7,7 +7,7 @@ function Notes(){
     return <div>
         <Card>
             <h2>
-                Notes here
+                Leave me a note here
             </h2>
         </Card>
     </div>

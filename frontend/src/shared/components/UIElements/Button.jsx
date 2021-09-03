@@ -8,7 +8,7 @@ const Button = props => {
     return (
       <a
         className={`button button--${props.size || 'default'} ${props.inverse &&
-          'button--inverse'} ${props.danger && 'button--danger'} ${props.hasIcon && 'button--hasIcon'} ${props.isCompact && 'button--isCompact'} ${props.borderTopLeftRoundCorner && 'button--borderTopLeftRoundCorner'}`}
+          'button--inverse'} ${props.danger && 'button--danger'} ${props.hasIcon && 'button--hasIcon'} ${props.isCompact && 'button--isCompact'} ${props.borderTopLeftRoundCorner && 'button--borderTopLeftRoundCorner'} ${props.borderTopRightRoundCorner && 'button--borderTopRightRoundCorner'}`}
         href={props.href}
       >
         {props.children}
@@ -21,7 +21,7 @@ const Button = props => {
         to={props.to}
         exact={props.exact}
         className={`button button--${props.size || 'default'} ${props.inverse &&
-          'button--inverse'} ${props.danger && 'button--danger'} ${props.hasIcon && 'button--hasIcon'} ${props.isCompact && 'button--isCompact'} ${props.borderTopLeftRoundCorner && 'button--borderTopLeftRoundCorner'}`}
+          'button--inverse'} ${props.danger && 'button--danger'} ${props.hasIcon && 'button--hasIcon'} ${props.isCompact && 'button--isCompact'} ${props.borderTopLeftRoundCorner && 'button--borderTopLeftRoundCorner'} ${props.borderTopRightRoundCorner && 'button--borderTopRightRoundCorner'}`}
       >
         {props.children}
       </Link>
@@ -30,7 +30,7 @@ const Button = props => {
   return (
     <button
       className={`button button--${props.size || 'default'} ${props.inverse &&
-        'button--inverse'} ${props.danger && 'button--danger'} ${props.hasIcon && 'button--hasIcon'} ${props.isCompact && 'button--isCompact'} ${props.borderTopLeftRoundCorner && 'button--borderTopLeftRoundCorner'}`}
+        'button--inverse'} ${props.danger && 'button--danger'} ${props.hasIcon && 'button--hasIcon'} ${props.isCompact && 'button--isCompact'} ${props.borderTopLeftRoundCorner && 'button--borderTopLeftRoundCorner'} ${props.borderTopRightRoundCorner && 'button--borderTopRightRoundCorner'}`}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}

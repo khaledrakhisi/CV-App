@@ -9,7 +9,6 @@ import Button from "../../../shared/components/UIElements/Button";
 import "./WorkItem.css";
 import Modal from "../../../shared/components/UIElements/Modal";
 import SimpleTabs from "../../../shared/components/UIElements/SimpleTabs";
-import { Link } from "react-router-dom";
 
 function WorkItem(props) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -18,35 +17,56 @@ function WorkItem(props) {
     tab1: (
       <div className="place-item__tab">
         <h2>Description</h2>
-        {props.description}
+        <div className="place-item__modal-description"><p>{props.description}</p></div>
       </div>
     ),
     tab2: (
       <div className="place-item__tab">
-        <h2>Technical information</h2>        
+        <h2>Technical information</h2>
         <ul>
-          <li><span>Programming Language: </span>{props.technicalInfo.language}</li>
-          <li><span>Platform: </span>{props.technicalInfo.platform}</li>
-          <li><span>Dev Method: </span>{props.technicalInfo.method}</li>
+          <li>
+            <span>Language: </span>
+            <strong>{props.technicalInfo.language}</strong>
+          </li>
+          <li>
+            <span>Platform: </span>
+            <strong>{props.technicalInfo.platform}</strong>
+          </li>
+          <li>
+            <span>Dev Method: </span>
+            <strong>{props.technicalInfo.method}</strong>
+          </li>
         </ul>
       </div>
     ),
     tab3: (
-            <div className="place-item__tab">
-              <h2>Links</h2>
-              <Link to={props.url}>{props.url}</Link>
-            </div>
-          ),
+      <div className="place-item__tab">
+        <h2>Links</h2>
+        <a target="_blank" href={props.links}>
+          {props.links}
+        </a>
+      </div>
+    ),
     tab4: (
-          <div className="place-item__tab">
-            <h2>Extra Info</h2>
-            <ul>
-              <li><span>Contractor: </span>{props.contractor}</li>
-              <li><span>Start Date: </span>{props.duration.start}</li>
-              <li><span>End Date: </span>{props.duration.end}</li>
-            </ul>
-          </div>
-          ),
+      <div className="place-item__tab">
+        <h2>Extra Info</h2>
+        <ul className="place-item__modal-extra">
+          <li>
+            <span>Contractor: </span>
+            <strong>{props.contractor}</strong>
+          </li>
+          <li>
+            <span>Start Date: </span>
+            <strong>{props.duration.start}</strong>
+          </li>
+          <li>
+            <span>End Date: </span>
+            <strong>{props.duration.end}</strong>
+          </li>
+        </ul>
+        <p>Tags: {props.tags}</p>
+      </div>
+    ),
   };
 
   const eh_expand_button = () => {
@@ -66,7 +86,7 @@ function WorkItem(props) {
         footerClass="place-item__modal-actions"
         // footer={<Button onClick={eh_close_button}>Close</Button>}
       >
-        <div className="place-item__image">
+        <div className="place-item__modal-image">
           <img src={props.images[0]} alt={props.title} />
         </div>
         <SimpleTabs content={tabsContent} />
@@ -83,7 +103,7 @@ function WorkItem(props) {
         {/* <li className="place-item" style={{transitionDelay: `${props.displayDelay}ms` }}>       */}
         <Card className="place-item__content">
           <div className="place-item__image" onClick={eh_expand_button}>
-            <img src={props.images[0]} alt={props.title} />
+            <img src={`${props.images[0]}`} alt={props.title} />
           </div>
           <div className="place-item__info">
             <h2 onClick={eh_expand_button}>{props.title}</h2>
@@ -92,21 +112,21 @@ function WorkItem(props) {
           </div>
           <div className="place-item__tags">{props.tags}</div>
           <div className="place-item__actions">
-            <Button
+            {/* <Button
               inverse
               onClick={eh_expand_button}
               isCompact
               borderTopLeftRoundCorner
             >
               <SettingsOverscanIcon />
-            </Button>
+            </Button> */}
             {props.showEditButtons && (
-              <Button to={"/places/" + props.id} isCompact>
+              <Button to={"/places/" + props.id} isCompact borderTopLeftRoundCorner>
                 <EditIcon />
               </Button>
             )}
             {props.showEditButtons && (
-              <Button danger isCompact>
+              <Button danger isCompact borderTopRightRoundCorner>
                 {/* <DeleteIcon style={{ color: red[500] }}/> */}
                 <DeleteIcon />
               </Button>

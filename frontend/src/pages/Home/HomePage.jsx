@@ -2,12 +2,25 @@ import React from "react";
 
 import "./HomePage.css";
 
-function HomePage() {
+function HomePage(props) {
+
+  let content = {
+    EN:{
+      title: "I'm khaled",
+      description: "a software developer",
+    },
+    DE:{
+      title: "Ich bin Khaled",
+      description: "ein Software Entwickler",
+    }
+  }
+  content = props.language === "EN" ?  content.EN : content.DE;
+
   return (
     <React.Fragment>
       <div className="top_container" style={{backgroundImage:`url(${process.env.PUBLIC_URL + "images/homepage/himmel.png"})`}}>        
-        <h1 className="title">I'm khaled</h1>
-        <h3 className="title_description">a Software Developer</h3>
+        <h1 className="title">{content.title}</h1>
+        <h3 className="title_description">{content.description}</h3>
         <h3 className="title_like">🤍 1</h3>
         <div className="sonne" style={{backgroundImage:`url(${process.env.PUBLIC_URL + "images/homepage/sonne.png"})`}}></div>
         <img className="wolke1" src={process.env.PUBLIC_URL + "images/homepage/wolke3.png"} alt=""/>        

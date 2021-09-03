@@ -1,29 +1,37 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import MailIcon from '@material-ui/icons/Mail';
 
 import "./Footer.css";
 
 function Footer() {
   return (
     <div className="bottom_container">
-      <h1 className="footer_icons">
-        <Link to="/">
-          <InstagramIcon className="instagram_icon" />
-        </Link>
-      </h1>
-      <h1 className="footer_icons">
-        <Link to="/">
-          <YouTubeIcon className="youtube_icon" />
-        </Link>
-      </h1>
-      <h1 className="footer_icons">
-        <Link to="/">
-          <MailIcon className="mail_icon" />
-        </Link>
-      </h1>
+      <ul className="social_icons">
+        <li>
+          <a className="social_icon" href="#">
+            <i className={"fab fa-instagram fa-2x instagram_icon"}></i>
+          </a>
+        </li>
+        <li>
+          <a className="social_icon" href="#">
+            <i className="fab fa-linkedin fa-2x linkedin_icon"></i>
+          </a>
+        </li>
+        <li>
+          <a className="social_icon" href="#">
+            <i className="fab fa-github fa-2x github_icon"></i>
+          </a>
+        </li>
+        <li>
+          <a className="social_icon" href="#">
+          <i className="fab fa-youtube fa-2x youtube_icon"></i>
+          </a>
+        </li>
+        <li>
+          <a className="social_icon" href="#">
+          <i className="fas fa-envelope-open-text fa-2x mail_icon"></i>
+          </a>
+        </li>
+      </ul>
       <p className="copyrighttext">Copyright © 2021 Khaled Rakhisi</p>
     </div>
   );
