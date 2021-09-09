@@ -1,23 +1,49 @@
 import React, { useState } from "react";
 
-import Card from "../../../shared/components/UIElements/Card";
-import SettingsOverscanIcon from "@material-ui/icons/SettingsOverscan";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Zoom from "@material-ui/core/Zoom";
+import { createStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core";
+
+import Card from "../../../shared/components/UIElements/Card";
 import Button from "../../../shared/components/UIElements/Button";
-// import { red } from '@material-ui/core/colors';
-import "./WorkItem.css";
 import Modal from "../../../shared/components/UIElements/Modal";
 import SimpleTabs from "../../../shared/components/UIElements/SimpleTabs";
 
+import "./WorkItem.css";
+
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    rotateIcon: {
+      // transition: "transform .5s ease"
+    },
+    li: {
+      // transition: "transform 0.2s ease-in-out",
+      transition: theme.transitions.create(["scale", "transform"], {
+        duration: theme.transitions.duration.complex,
+      }),
+      "&:hover": {
+        // backgroundColor: "#333",
+        // animation: "zoom .2s ease 1 forwards",
+        transform: "scale(1.07)",
+      },
+    },
+  })
+);
+
 function WorkItem(props) {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const classes = useStyles();
 
   const tabsContent = {
     tab1: (
       <div className="place-item__tab">
         <h2>Description</h2>
-        <div className="place-item__modal-description"><p>{props.description}</p></div>
+        <div className="place-item__modal-description">
+          <p>{props.description}</p>
+        </div>
       </div>
     ),
     tab2: (
@@ -42,7 +68,7 @@ function WorkItem(props) {
     tab3: (
       <div className="place-item__tab">
         <h2>Links</h2>
-        <a target="_blank" href={props.links}>
+        <a target="_blank" rel="noreferrer" href={props.links}>
           {props.links}
         </a>
       </div>
@@ -91,28 +117,28 @@ function WorkItem(props) {
         </div>
         <SimpleTabs content={tabsContent} />
       </Modal>
-
-      <li
-        className="place-item"
-        style={{
-          animation: `fadeInAnimation ${300}ms ease-in ${
-            props.displayDelay
-          }ms forwards`,
-        }}
-      >
-        {/* <li className="place-item" style={{transitionDelay: `${props.displayDelay}ms` }}>       */}
-        <Card className="place-item__content">
-          <div className="place-item__image" onClick={eh_expand_button}>
-            <img src={`${props.images[0]}`} alt={props.title} />
-          </div>
-          <div className="place-item__info">
-            <h2 onClick={eh_expand_button}>{props.title}</h2>
-            {/* <h3>{props.technicalInfo}</h3> */}
-            <p>{props.description}</p>
-          </div>
-          <div className="place-item__tags">{props.tags}</div>
-          <div className="place-item__actions">
-            {/* <Button
+      <Zoom in={true} style={{ transitionDelay: props.displayDelay }}>
+        <li
+          className={`place-item ${classes.li}`}
+          // style={{
+          //   animation: `fadeInAnimation ${300}ms ease-in ${
+          //     props.displayDelay
+          //   }ms forwards`,
+          // }}
+        >
+          {/* <li className="place-item" style={{transitionDelay: `${props.displayDelay}ms` }}>       */}
+          <Card className="place-item__content">
+            <div className="place-item__image" onClick={eh_expand_button}>
+              <img src={`${props.images[0]}`} alt={props.title} />
+            </div>
+            <div className="place-item__info">
+              <h2 onClick={eh_expand_button}>{props.title}</h2>
+              {/* <h3>{props.technicalInfo}</h3> */}
+              <p>{props.description}</p>
+            </div>
+            <div className="place-item__tags">{props.tags}</div>
+            <div className="place-item__actions">
+              {/* <Button
               inverse
               onClick={eh_expand_button}
               isCompact
@@ -120,20 +146,25 @@ function WorkItem(props) {
             >
               <SettingsOverscanIcon />
             </Button> */}
-            {props.showEditButtons && (
-              <Button to={"/places/" + props.id} isCompact borderTopLeftRoundCorner>
-                <EditIcon />
-              </Button>
-            )}
-            {props.showEditButtons && (
-              <Button danger isCompact borderTopRightRoundCorner>
-                {/* <DeleteIcon style={{ color: red[500] }}/> */}
-                <DeleteIcon />
-              </Button>
-            )}
-          </div>
-        </Card>
-      </li>
+              {props.showEditButtons && (
+                <Button
+                  to={"/places/" + props.id}
+                  isCompact
+                  borderTopLeftRoundCorner
+                >
+                  <EditIcon />
+                </Button>
+              )}
+              {props.showEditButtons && (
+                <Button danger isCompact borderTopRightRoundCorner>
+                  {/* <DeleteIcon style={{ color: red[500] }}/> */}
+                  <DeleteIcon />
+                </Button>
+              )}
+            </div>
+          </Card>
+        </li>
+      </Zoom>
     </React.Fragment>
   );
 }

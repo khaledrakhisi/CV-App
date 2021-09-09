@@ -3,16 +3,18 @@
   width: 30%;
   height: 40%;
   display: inline-block;
-  opacity: 0;
-  transition: transform 0.2s;
+  /* opacity: 0; */
+  /* transition: transform 0.2s; */
+
   /* animation: fadeInAnimation ease 1s; */
   /* animation-iteration-count: 1; */
   /* animation-fill-mode: forwards; */
 }
-.place-item:hover {
+/* .place-item:hover {
   transform: scale(1.07);
-}
+} */
 
+/* this animation is applied by code in jsx file */
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -23,6 +25,18 @@
     opacity: 1;
     /* transform: translateX(0); */
     /* transform: scale(1); */
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.07);
   }
 }
 
@@ -38,28 +52,27 @@
 }
 
 .place-item__tab {
-  padding: 0 .1rem .1rem .1rem;
+  padding: 0 0.1rem 0.1rem 0.1rem;
   text-align: left;
   line-height: 1.5;
   height: 6rem;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
-.place-item__tab h2{
+.place-item__tab h2 {
   font-size: 1rem;
 }
-.place-item__tab span{
+.place-item__tab span {
   color: blue;
   width: 8rem;
   display: inline-block;
 }
-.place-item__tab p{
-  font-size: .9rem;
-  
+.place-item__tab p {
+  font-size: 0.9rem;
 }
-.place-item__tab a:hover{
+.place-item__tab a:hover {
   color: blue;
 }
-.place-item__tab a:active{
+.place-item__tab a:active {
   color: purple;
 }
 
@@ -76,7 +89,7 @@
   object-fit: cover;
 }
 
-.place-item__modal-image{
+.place-item__modal-image {
   width: 100%;
   height: 15rem;
   margin-right: 1.5rem;
@@ -93,12 +106,13 @@
 .place-item__info p {
   font-size: 110%;
   margin: 0.5rem 0 0 0;
+
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.place-item__info h2{
+.place-item__info h2 {
   cursor: pointer;
 }
 .place-item__info p {
@@ -111,6 +125,7 @@
   text-align: left;
   margin: 0 0.5rem 0.5rem;
   padding: 0 0.5rem;
+
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -135,21 +150,21 @@
 .place-item__modal-actions {
   text-align: right;
 }
-.place-item__modal-description{
+.place-item__modal-description {
   height: 5rem;
   padding: 0;
   margin: 0;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   text-align: left;
   overflow: scroll;
   overflow-x: hidden;
 }
 
-.place-item__modal-extra{
+.place-item__modal-extra {
   height: 5rem;
   padding: 0;
   margin: 0;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   text-align: left;
   overflow: scroll;
   white-space: nowrap;

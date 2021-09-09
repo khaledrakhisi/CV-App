@@ -51,14 +51,17 @@
   }
   .title_like{
     padding: .5rem;
-    font-size: 1rem;    
+    font-size: 1rem;
     background-color: #0ab7c7;
-    color: 007580;
-    /* border : 1px solid red; */
+    color: #ffffff;
     width: 4rem;
     border-radius: 8px;
-    margin: auto auto 7rem auto;
+    margin: auto;
     cursor: pointer;
+  }
+  .title_like span{
+    padding-left: .5rem;
+    color: #000;
   }
 
   .slider_season{
@@ -176,7 +179,7 @@
     left:10rem;
     top: 1rem;
     animation: animation_wolke 19s infinite linear;
-    width: 15%;
+    width: 15%;    
   }
   .wolke2{
     position:absolute;
@@ -206,7 +209,7 @@
     left: 0;
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 60%;
+    bottom:3rem;
     width: 5rem;
   }
   .baum3{
@@ -228,7 +231,7 @@
     left: 4.2rem;
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 60%;
+    bottom: 3rem;
   }
   
   .skill-row{
@@ -327,7 +330,7 @@
       left: 15%;
       /* top: 62%; */
       /* margin: 0 auto;     */
-      bottom: 60%;
+      bottom: 3rem;
       width: 8%;
     }
     .baum3{
@@ -351,7 +354,7 @@
       left: 20%;
       /* top: 62%; */
       /* margin: 0 auto;     */
-      bottom: 60%;
+      bottom: 3rem;
       width: 6%;
     }
     .sonne {

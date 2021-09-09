@@ -6,6 +6,7 @@ const HttpError = require("./models/HttpError");
 const worksRouter = require("./Routes/WorksRoute");
 const resumeRouter = require("./Routes/ResumeRoute");
 const usersRouter = require("./Routes/UsersRoute");
+const notesRouter = require("./Routes/NotesRoute");
 
 const app = express();
 const PORT = 5000;
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 app.use("/api/works", worksRouter);
 app.use("/api/resume", resumeRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/notes", notesRouter);
 app.use((req, res, next)=>{
   throw new HttpError("Page Not Found", 404);
 });

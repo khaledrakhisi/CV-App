@@ -1,62 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 .main-navigation__menu-btn {
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-right: 2rem;
-    cursor: pointer;
-  }
-  
-  .main-navigation__menu-btn span {
-    display: block;
-    width: 3rem;
-    height: 2.5px;
-    background: rgb(255, 255, 255);
-  }
-  
-  .main-navigation__contact{
-    color: #f03f09;
-    
-  }
+  width: 3rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 2rem;
+  cursor: pointer;
+  z-index: 12;
+}
+/* 
+.main-navigation__menu-btn span {
+  display: block;
+  position: relative;
+  width: 2.8rem;
+  height: 2.5px;
+  background: #11999e;    
+  z-index: 11;
+} */
 
-  .main-navigation__title {
-    color: #11999e;    
-  }
-  
-  .main-navigation__title a {
-    font-family: 'Indie Flower', cursive;
-    text-decoration: none;
-    color: #11999e;    
-    margin-left: calc(50vw - 10rem);
-    font-size: 1.5rem;
-  }
-  .main-navigation__title a:hover {
-    color: #ffffff;    
-  }
-  
-  .main-navigation__header-nav {
+/* the middle one */
+.main-navigation__menu-btn span.second {
+  display: block;
+  position: relative;
+  width: 2rem;
+  height: 2.5px;
+  background: #11999e;
+  /* border-radius: 60%; */
+  transition: all .5s ease-in-out;
+}
+.main-navigation__menu-btn span.first,
+.main-navigation__menu-btn span.third{
+  /* content mmust be provided to make the ::before and ::after work */
+  content: ''; 
+  display: block;
+  position: relative;
+  width: 2.8rem;
+  height: 2.5px;
+  background: #11999e;
+  /* border-radius: 60%; */
+  transition: all .3s ease-in-out;
+  /* z-index: 15; */
+}
+
+.main-navigation__menu-btn span.first {
+  /* transform: translateY(-16px); */
+}
+.main-navigation__menu-btn span.third {
+  /* transform: translateY(16px); */
+}
+
+/* ANIMATION */
+.main-navigation__menu-btn.open span.second {
+  /* transform: translateX(-50px); */
+  background: transparent;
+  box-shadow: none;
+}
+.main-navigation__menu-btn.open span.first {
+  transform: rotate(45deg) translateX(0px) translateY(13px);
+  background: #11999e;
+  width: 2.2rem;
+}
+.main-navigation__menu-btn.open span.third {
+  transform: rotate(-45deg) translate(1px) translateY(-15px);
+  background: #11999e;
+  width: 2.2rem;
+}
+
+.main-navigation__contact {
+  color: #f03f09;
+}
+
+.main-navigation__title {
+  color: #11999e;
+  /* transition: transform 300ms ease-in-out; */
+}
+/* .main-navigation__title:hover {
+  color: #bc2a8d;
+  -webkit-transition: color 500ms linear;
+  -ms-transition: color 500ms linear;
+  transition: color 500ms linear;
+} */
+.main-navigation__title a {
+  font-family: "Indie Flower", cursive;
+  text-decoration: none;
+  color: #11999e;
+  margin-left: calc(50vw - 10rem);
+  font-size: 1.5rem;
+}
+.main-navigation__title a:hover {
+  color: #ffffff;
+  -webkit-transition: color 300ms ease-in-out;
+  -ms-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+}
+
+.main-navigation__header-nav {
+  display: none;
+}
+
+.main-navigation__drawer-nav {
+  height: 100%;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .main-navigation__menu-btn {
     display: none;
   }
-  
-  .main-navigation__drawer-nav {
-    height: 100%;
-  }
-  
-  @media (min-width: 768px) {
-    .main-navigation__menu-btn {
-      display: none;
-    }
-  
-    .main-navigation__header-nav {
-      display: block;
-    }
 
-    .main-navigation__title a{
-      margin-left: calc(50vw - 16rem);
-    }
+  .main-navigation__header-nav {
+    display: block;
   }
+
+  .main-navigation__title a {
+    margin-left: calc(50vw - 16rem);
+  }
+}

@@ -102,7 +102,7 @@ import "./Works.css";
 // ];
 
 function Works() {
-  const { isLoading, errorMessage, sendRequest, clearError } = useHttpClient();
+  const { isLoading, errorMessage, sendRequest } = useHttpClient();
   const [works, setWorks] = useState();
 
   useEffect(() => {

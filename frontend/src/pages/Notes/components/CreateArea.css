@@ -1,0 +1,64 @@
+form.create-note {
+  position: relative;
+  width: 50%;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+
+  transform: all .4s ease;
+}
+@media (max-width:800px) {
+  form.create-note {
+    width: 70%;
+  }
+}
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+
+  transform: all .4s ease;
+}
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #11999e;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+
+  /* -webkit-transition: background-color 1s ease;
+  -moz-transition: background-color 1s ease;
+  -o-transition: background-color 1s ease;
+  transition: background-color 1s ease; */
+
+  /* -webkit-transition: transform .5s ease;
+  -moz-transition: transform .5s ease;
+  -o-transition: transform .5s ease;*/
+  /* transition: transform .5s ease;  */
+}
+form.create-note button:hover {  
+  /* background-color: #92d08a; */
+  /* transform: rotate(180deg) */
+}
+input#title{
+  border-bottom: 1px solid #d1f1e2;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}

@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-
-import GetAppTwoToneIcon from "@material-ui/icons/GetAppTwoTone";
 
 import Card from "../../shared/components/UIElements/Card";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import useHttpClient from "../../shared/Hooks/useHttpClient";
-// import InstagramIcon from "@material-ui/icons/Instagram";
-// import YouTubeIcon from "@material-ui/icons/YouTube";
-// import MailIcon from "@material-ui/icons/Mail";
-// import LinkedInIcon from "@material-ui/icons/LinkedIn";
-// import GitHubIcon from "@material-ui/icons/GitHub";
 
 import "./About.css";
 
-function About() {
-  const { isLoading, errorMessage, sendRequest, clearError } = useHttpClient();
+function About(props) {
+  // const [content , setContent] = useState(null);
+  let content;
+
+  const { isLoading, errorMessage, sendRequest } = useHttpClient();
   const [resume, setResume] = useState();
 
   useEffect(() => {
@@ -25,12 +20,31 @@ function About() {
           `http://localhost:5000/api/resume/`
         );
         setResume(responseData.resume[0]);
-        console.log(responseData.resume[0].main.social);
       } catch (err) {}
     };
     fetchData();
   }, [sendRequest]);
   // useEffect with [] parameter means run just once.
+
+  if(!isLoading && resume){
+    let cntnt = {
+      EN:{
+        title1: "About me",
+        title2: "Contact details",
+        download : "Download Resume",
+        bio:resume.main.EN.bio,            
+      },
+      DE:{
+        title1: "Über mich",
+        title2: "Kontaktdetails",
+        download : "Lebenslauf herunterladenn",
+        bio:resume.main.DE.bio,            
+      }
+    }
+    // props.language === "EN" ? setContent(cntnt.EN) : setContent(cntnt.DE);
+    content = props.language === "EN" ? cntnt.EN : cntnt.DE;
+    // console.log(content);
+  }
 
   if (!!errorMessage) {
     return (
@@ -52,23 +66,25 @@ function About() {
         </div>
       )}
 
-      {!isLoading && resume && (
+      {!isLoading && resume &&(
         <section id="about">
           <div className="row">
-            <div className="column1 hidden">
+            <div className="column1">
               <img
                 className="profile-pic"
                 src={resume.main.image}
                 alt="Tim Baker Profile Pic"
               />
+              <br />
+              <p>{resume.main.name}</p>                            
             </div>
             <div className="column2">
-              <h2>About Me</h2>
+              <h2>{content.title1}</h2>
 
-              <p>{resume.main.bio}</p>
+              <p>{content.bio}</p>
 
-              <div className="column2">
-                <h2>Contact Details</h2>
+              {/* <div className="column2"> */}
+                <h2>{content.title2}</h2>
                 <p className="address">
                   <span>{resume.main.name}</span>
                   <br />
@@ -94,14 +110,13 @@ function About() {
                     );
                   })}
                 </ul>
-              </div>
-              <br />
+              {/* </div> */}                        
               <div className="download">
                 <a href={resume.main.resumedownload} className="button">
-                  <GetAppTwoToneIcon /> Download Resume
+                <i class="fas fa-cloud-download-alt"></i>  {content.download}
                 </a>
               </div>
-            </div>
+            </div>            
           </div>
         </section>
       )}

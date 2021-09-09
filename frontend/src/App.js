@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./pages/About/About";
 import Auth from "./pages/Authentication/Auth";
+import Fun from "./pages/Fun/Fun";
 import HomePage from "./pages/Home/HomePage";
 import Notes from "./pages/Notes/Notes";
 import Works from "./pages/Works/Works";
@@ -25,7 +26,7 @@ function App() {
   );
 
   const storeLanguageInLocalStorage = (language) => {
-    console.log("lang >> " + language);
+    // console.log("lang >> " + language);
     localStorage.setItem("language", language);
   }
   const eh_languageChanged = (language)=>{    
@@ -50,7 +51,9 @@ function App() {
             <Route path="/works" exact>
               <Works language={language}/>
             </Route>
-            <Route path="/blog" exact></Route>
+            <Route path="/fun" exact>
+              <Fun language={language}/>
+            </Route>
             <Route path="/about" exact>
               <About language={language}/>
             </Route>
@@ -59,7 +62,7 @@ function App() {
             </Route>
           </Switch>
         </main>
-        <Footer />
+        <Footer />        
       </Router>
     </AuthContext.Provider>
   );

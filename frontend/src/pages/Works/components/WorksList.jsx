@@ -3,8 +3,8 @@ import React, { useContext } from "react";
 import WorkItem from "./WorkItem";
 import Card from "../../../shared/components/UIElements/Card";
 import { AuthContext } from "../../../shared/components/context/AuthContext";
-
 import "./WorksList.css";
+
 
 function WorksList(props) {
   const auth = useContext(AuthContext);
@@ -22,11 +22,12 @@ function WorksList(props) {
     );
   }
 
-  const DELAY = 200;
+  const ITEM_DISPLAY_DELAY = 200;
 
   const populatedItems = (
     <ul className="place-list">
-      {props.items.map((item, i) => (
+      {props.items.map((item, i) => (    
+
         <WorkItem
           id={item.id}
           key={item.id}
@@ -38,9 +39,10 @@ function WorksList(props) {
           duration={item.duration}
           showEditButtons={!!auth.loggedinUser}
           tags={item.tags}
-          displayDelay={DELAY * i}
+          displayDelay={ITEM_DISPLAY_DELAY * i}
           technicalInfo={item.technicalInfo}
-        />
+        />  
+      
       ))}
     </ul>
   );

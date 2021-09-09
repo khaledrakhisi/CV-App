@@ -2,28 +2,33 @@ const { validationResult } = require("express-validator");
 const mongoose = require("mongoose");
 
 const HttpError = require("../models/HttpError");
-const Work = require("../models/Work");
+const Note = require("../models/Note");
 
-async function works_getAll(req, res, next){
+async function notes_getAll(req, res, next) {
 
-    let works = null;
-    try {
-      works = await Work.find({});
-    } catch (err) {
-      console.log(err);
-      return next(
-        new HttpError("works ctrler: something's wrong with the database!", 500)
-      );
-    }
-  
-    if (!works || works.length === 0) {
-      return next(new HttpError("no work project found.", 500));
-    }
-    // console.log(works);
-    res.status(200).json({works: works.map((item) => item.toObject({ getters: true }))});
+  let notes = null;
+  try {
+    notes = await Note.find({});
+    // console.log(resumeData);
+  } catch (err) {
+    console.log(err);
+    return next(
+      new HttpError("notes ctrler: something's wrong with the database!", 500)
+    );
+  }
+
+  if (!notes || notes.length === 0) {
+    return next(new HttpError("no note found.", 500));
+  }
+  console.log(notes);
+  res
+    .status(200)
+    .json({
+      notes: notes.map((item) => item.toObject({ getters: true })),
+    });
 }
 
-async function works_addNew(req, res, next){
+async function notes_addNew(req, res, next){
     const result = validationResult(req).formatWith(
         ({ location, msg, param, value, nestedErrors }) => {
           // Build your resulting errors however you want! String, object, whatever - it works!
@@ -40,20 +45,16 @@ async function works_addNew(req, res, next){
         });
         return next(new HttpError(errorMessage, 422));
       }
-      const { title, description, technicalInfo, images, duration, contractor, links, tags } = req.body;
+      const { title, content, creationDate, userId } = req.body;
         
-      const work = new Work({
+      const note = new Note({
         title,
-        description,
-        technicalInfo,
-        images,
-        duration,
-        contractor,
-        links,
-        tags,
+        content,
+        creationDate,
+        userId,        
       });
     
-      console.log(work);
+      console.log(note);
     //   let user = null;
     //   try {
     //     user = await User.findById(userId);
@@ -72,17 +73,17 @@ async function works_addNew(req, res, next){
       try{
         const session = await mongoose.startSession();
         session.startTransaction();
-        await work.save({ session });
+        await note.save({ session });
         // user.places.push(place);
         // await work.save({ session });
         await session.commitTransaction();
       }catch(err){
         console.log(err);
-        return next(new HttpError("adding new work was failed.", 500)); 
+        return next(new HttpError("Adding new note was failed.", 500)); 
       }    
     
-      res.status(201).json({ work });
+      res.status(201).json({ note: note });
 }
 
-exports.works_getAll = works_getAll;
-exports.works_addNew = works_addNew;
+exports.notes_getAll = notes_getAll;
+exports.notes_addNew = notes_addNew;

@@ -13,10 +13,10 @@ function NavLinks(props) {
       item4:"notes",
     },
     DE:{
-      item1:"werke",
-      item2:"über",
-      item3:"spaß",
-      item4:"notizen",
+      item1:"Werke",
+      item2:"Über",
+      item3:"Spaß",
+      item4:"Notizen",
     }
   }
   content = props.language === "EN" ? content.EN : content.DE;
@@ -34,7 +34,7 @@ function NavLinks(props) {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/blog" exact>
+        <NavLink to="/fun" exact>
           {content.item3}
         </NavLink>
       </li>

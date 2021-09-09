@@ -160,10 +160,14 @@
     .hidden {
         display: none;
     }
-    .column2, .column1{
+    .column2, .column1, .column1 p{
         width: 100%;
+        text-align: center;
     }
     .row{
         padding: 1rem;
+      }
+      #about .column2 p {
+        text-align: left;
       }
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { makeStyles } from "@material-ui/core";
+// import { makeStyles } from "@material-ui/core";
 import { CSSTransition } from "react-transition-group";
-import Draggable from "react-draggable";
+// import Draggable from "react-draggable";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
-import { yellow } from "@material-ui/core/colors";
+// import { yellow } from "@material-ui/core/colors";
 
 import "./Modal.css";
 import Backdrop from "./Backdrop";
@@ -13,7 +13,8 @@ import Backdrop from "./Backdrop";
 const ModalOverlay = (props) => {
 
   const content = (  
-    // <Draggable handle="#handle">  
+    // <Draggable handle="#handle">
+    // <div className="modalform">
       <div className={`modal ${props.className}`} style={props.style}>
       
         <header id="handle" className={`modal__header ${props.headerClass}`}>
@@ -36,7 +37,8 @@ const ModalOverlay = (props) => {
           </div>
         </form>
       </div>  
-      // </Draggable>    
+    //   </div>
+    //  </Draggable>    
   );
 
   return ReactDOM.createPortal(content, document.getElementById("hook-modal"));
@@ -51,7 +53,7 @@ const Modal = (props) => {
         mountOnEnter
         unmountOnExit
         timeout={200}
-        classNames="modal"
+        classNames="modal"        
       >
         <ModalOverlay {...props} />
       </CSSTransition>
