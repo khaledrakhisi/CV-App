@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import moment from "moment";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
@@ -55,7 +56,7 @@ function CreateArea(props) {
       return {
         ...prevNote,
         userId : "888",
-        creationDate : Date.now(),
+        created_date : moment().format('YYYY-MM-DD'),
         [name]: value,
       };
     });
@@ -67,12 +68,12 @@ function CreateArea(props) {
     console.log(note);
     try {
       await sendRequest(
-        "http://localhost:5000/api/notes",
+        `${process.env.REACT_APP_BACKEND_URL}/notes`,
         "POST",
         JSON.stringify({
           title: note.title,
           content: note.content,
-          creationDate: note.creationDate,
+          created_date: note.created_date,
           userId: note.userId,
         }),
         { "Content-Type": "Application/json" }

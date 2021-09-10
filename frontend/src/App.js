@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import About from "./pages/About/About";
 import Auth from "./pages/Authentication/Auth";
 import Fun from "./pages/Fun/Fun";

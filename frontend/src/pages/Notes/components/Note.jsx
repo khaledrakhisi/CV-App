@@ -25,7 +25,7 @@ function Note(props) {
             >
               <div id="note__header">
                 <button onClick={handleClick}>
-                  <i class="fas fa-times note__icon"></i>
+                  <i className="fas fa-times note__icon"></i>
                 </button>
               </div>
               <h1>{props.title}</h1>

@@ -20,7 +20,7 @@ async function resume_getAll(req, res, next) {
   if (!resumeData || resumeData.length === 0) {
     return next(new HttpError("no resume found.", 500));
   }
-  console.log(resumeData);
+  // console.log(resumeData);
   res
     .status(200)
     .json({

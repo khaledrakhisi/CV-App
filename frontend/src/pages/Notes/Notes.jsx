@@ -19,7 +19,7 @@ function Notes(props) {
     const fetchData = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/notes`
+          `${process.env.REACT_APP_BACKEND_URL}/notes`
         );
 
         console.log(responseData);

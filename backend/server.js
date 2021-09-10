@@ -7,13 +7,14 @@ const worksRouter = require("./Routes/WorksRoute");
 const resumeRouter = require("./Routes/ResumeRoute");
 const usersRouter = require("./Routes/UsersRoute");
 const notesRouter = require("./Routes/NotesRoute");
+const ratingsRouter = require("./Routes/RatingRoute");
 
 const app = express();
-const PORT = 5000;
-
-const DB_USER = "cvadmin";
-const DB_PASSWORD = encodeURIComponent("Miki@12345");
-const DB_URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster1.twxfq.mongodb.net/CVDB?retryWrites=true&w=majority`;
+const PORT = process.env.PORTNUM;
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD);
+const DB_NAME = process.env.DB_NAME;
+const DB_URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster1.twxfq.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
 // app.use(express.urlencoded()); //Parse URL-encoded bodies
 app.use(express.json());
@@ -33,8 +34,10 @@ app.use("/api/works", worksRouter);
 app.use("/api/resume", resumeRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/notes", notesRouter);
+app.use("/api/ratings", ratingsRouter);
+
 app.use((req, res, next)=>{
-  throw new HttpError("Page Not Found", 404);
+  throw new HttpError("Backend is ok! but Page not found. " + req.url, 404);
 });
 
 mongoose
@@ -44,13 +47,13 @@ mongoose
     useCreateIndex: true,
   })  
   .then(() => {
-    console.log(`connecting to the database was successfully!`);
+    console.log(`Connecting to the database was successfully!`);
     // if connection to the db was ok then
-    app.listen(process.env.PORT || PORT, (err) => {
+    app.listen(PORT, (err) => {
       if (err) console.log(err);
       else
         console.log(
-          `Server started listening to PORT ${process.env.PORT || PORT}.`
+          `Server started listening to PORT ${PORT}.`
         );
     });
   })

@@ -110,7 +110,7 @@ function Works() {
       try {
         // console.log(userId);
         const responseData = await sendRequest(
-          `http://localhost:5000/api/works/`
+          `${process.env.REACT_APP_BACKEND_URL}/works/`
         );
         // console.log(responseData);
         setWorks(responseData.works);

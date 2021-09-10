@@ -20,7 +20,7 @@ async function notes_getAll(req, res, next) {
   if (!notes || notes.length === 0) {
     return next(new HttpError("no note found.", 500));
   }
-  console.log(notes);
+  // console.log(notes);
   res
     .status(200)
     .json({
@@ -54,7 +54,7 @@ async function notes_addNew(req, res, next){
         userId,        
       });
     
-      console.log(note);
+      // console.log(note);
     //   let user = null;
     //   try {
     //     user = await User.findById(userId);

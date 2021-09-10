@@ -46,7 +46,7 @@ function Auth() {
     if (isSignupMode) {
       try {
         const resposeData = await sendRequest(
-          "http://localhost:5000/api/users/signup",
+          `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
           "POST",
           JSON.stringify({
             name: inputState.inputElements.input1.value,
@@ -62,7 +62,7 @@ function Auth() {
     } else {
       try {
         const resposeData = await sendRequest(
-          "http://localhost:5000/api/users/signin",
+          `${process.env.REACT_APP_BACKEND_URL}/users/signin`,
           "POST",
           JSON.stringify({
             email: inputState.inputElements.input2.value,

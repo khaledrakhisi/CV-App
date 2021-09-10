@@ -1,0 +1,9 @@
+{
+  "env": {
+    "DB_NAME": "CVDB",
+    "DB_USER": "cvadmin",
+    "DB_PASSWORD": "Miki@12345",
+    "PORTNUM": "4000",
+    "API_KEY" : "..."
+  }
+}

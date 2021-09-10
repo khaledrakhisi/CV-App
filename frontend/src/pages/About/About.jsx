@@ -17,7 +17,7 @@ function About(props) {
     const fetchData = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/resume/`
+          `${process.env.REACT_APP_BACKEND_URL}/resume/`
         );
         setResume(responseData.resume[0]);
       } catch (err) {}
@@ -113,7 +113,7 @@ function About(props) {
               {/* </div> */}                        
               <div className="download">
                 <a href={resume.main.resumedownload} className="button">
-                <i class="fas fa-cloud-download-alt"></i>  {content.download}
+                <i className="fas fa-cloud-download-alt"></i>  {content.download}
                 </a>
               </div>
             </div>            

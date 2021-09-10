@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-// import axios from "axios";
-import { Zoom } from "@material-ui/core";
+import moment from "moment";
+// import { Zoom } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
 
 import useHttpClient from "../../shared/Hooks/useHttpClient";
@@ -21,23 +21,66 @@ function HomePage(props) {
   };
   content = props.language === "EN" ? content.EN : content.DE;
 
-  const [clientPublicIP, setClientPublicIP] = useState();
+  const home_page_post_id = "613a817ffcb8d050e3828120";
   const { isLoading, sendRequest } = useHttpClient();
+  const [clientInfo, setClientInfo] = useState();
+  const [likesTotal, setLikesTotal] = useState();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         // const response = await axios.get("https://geolocation-db.com/json/");
         const response = await sendRequest("https://geolocation-db.com/json/");
-        console.log(response.IPv4);
-        setClientPublicIP(response.IPv4);
+        // console.log(response);        
+        setClientInfo(response);
       } catch (err) {}
     };
     fetchData();
   }, [sendRequest]);
 
-  if(!isLoading && clientPublicIP){
-
+  if (!isLoading && clientInfo) {
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await sendRequest(
+          `${process.env.REACT_APP_BACKEND_URL}/ratings/${home_page_post_id}`
+        );
+        // console.log(response);
+        setLikesTotal(response.ratings.length);
+      } catch (err) {}
+    };
+    fetchData();
+  }, [sendRequest]);
+
+  const eh_like_click = async(event) => {
+    
+    try {
+      await sendRequest(
+        `${process.env.REACT_APP_BACKEND_URL}/ratings`,
+        "POST",
+        JSON.stringify({
+          IPv4: clientInfo.IPv4,
+          IPv6: "",
+          comment: "",
+          city : clientInfo.city || "",
+          country_code: clientInfo.country_code || "", //"IR"
+          country_name: clientInfo.country_name || "", //"Iran"
+          latitude: clientInfo.latitude || "", //35.6961,
+          longitude: clientInfo.longitude || "", //51.4231,
+          postal: clientInfo.postal || "",
+          state: clientInfo.state || "", //null,
+          rating_type: "like", // "like"
+          created_date: moment().format('YYYY-MM-DD'),
+          modified_date: moment().format('YYYY-MM-DD'),
+          postId: home_page_post_id,
+        }),
+        { "Content-Type": "Application/json" }
+      );
+      setLikesTotal(prev=>(prev||0)+1);
+    } catch (err) {}
+  };
 
   return (
     <React.Fragment>
@@ -51,27 +94,23 @@ function HomePage(props) {
       >
         <h1 className="title">{content.title}</h1>
         <h3 className="title_description">{content.description}</h3>
-        <Zoom in={true}>
-          {/* <Fab aria-label="like">
-            <FavoriteIcon color="secondary" />
-          </Fab> */}
-
-          <h3 className="title_like">
-            <i className="fas fa-heart"></i>
-            <span>1</span>
-          </h3>
-        </Zoom>
+        {/* <Zoom in={true}> */}
+          <div className={`title_like zoom ${likesTotal && "is_liked"}`} onClick={eh_like_click}>
+            <i className={`fas fa-heart ${likesTotal && "fa-2x"}`}></i>
+            <span>{likesTotal && likesTotal}</span>
+          </div>
+        {/* </Zoom> */}
         <div
           className="sonne"
           style={{
             backgroundImage: `url(${
-              process.env.PUBLIC_URL + "images/homepage/sonne.png"
+              process.env.PUBLIC_URL + "/images/homepage/sonne.png"
             })`,
           }}
         ></div>
         <img
           className="wolke1"
-          src={process.env.PUBLIC_URL + "images/homepage/wolke3.png"}
+          src={process.env.PUBLIC_URL + "/images/homepage/wolke3.png"}
           alt=""
         />
         <img
