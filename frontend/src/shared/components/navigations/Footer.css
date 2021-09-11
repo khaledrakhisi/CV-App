@@ -80,3 +80,20 @@
   color: #1ad5e6;
   /* color: #eaf6f6; */
 }
+
+.social_icons{
+  margin: 1rem .5rem .3rem;
+  list-style: none outside;
+  padding: 0; 
+}
+.social_icons li{
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0;
+}
+.social_icon{
+    /* display: inline; */
+    /* margin: 1rem .5rem; */
+    height: 5rem;
+    color: #013c8a;    
+}
