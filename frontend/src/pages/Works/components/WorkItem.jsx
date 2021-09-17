@@ -49,7 +49,7 @@ function WorkItem(props) {
     tab2: (
       <div className="place-item__tab">
         <h2>Technical information</h2>
-        <ul>
+        <ul className="place-item__modal-extra">
           <li>
             <span>Language: </span>
             <strong>{props.technicalInfo.language}</strong>
@@ -68,9 +68,12 @@ function WorkItem(props) {
     tab3: (
       <div className="place-item__tab">
         <h2>Links</h2>
-        <a target="_blank" rel="noreferrer" href={props.links}>
-          {props.links}
-        </a>
+        <ul className="place-item__modal-links">
+          {props.links.map((item, i)=>{
+            return <li key={i}><a target="_blank" rel="noreferrer" href={item.url}>{item.title}</a></li>
+          })}
+        </ul>
+        
       </div>
     ),
     tab4: (

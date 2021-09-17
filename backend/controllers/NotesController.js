@@ -18,8 +18,9 @@ async function notes_getAll(req, res, next) {
   }
 
   if (!notes || notes.length === 0) {
-    return next(new HttpError("no note found.", 500));
+    return next(new HttpError("no note found.", 404));
   }
+  // console.log("hereeeeeeee");
   // console.log(notes);
   res
     .status(200)

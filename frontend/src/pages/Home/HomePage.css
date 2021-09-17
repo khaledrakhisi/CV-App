@@ -68,14 +68,14 @@
 }
 .title_like:hover {
   background-color: #b1f6fd;
-  transform: scale(1.3);
+  /* transform: scale(1.3); */
   -webkit-transition: background-color 100ms ease-in-out;
   -ms-transition: color 100ms ease-in-out;
   transition: background-color 100ms ease-in-out;
-  transition: transform 100ms ease;
+  /* transition: transform 100ms ease; */
 }
 .title_like:active{
-  transform: scale(1.6);
+  transform: scale(1.4);
   transition: transform 100ms ease;
 }
 .title_like.zoom {
@@ -190,7 +190,7 @@
   /* top: 63%; */
   /* transform: translate(-50%, -50%); */
   margin: 0 auto;
-  width: 20rem;
+  width: 60%;
   bottom: 50%;
   z-index: 2;
 }
@@ -200,7 +200,7 @@
   right: 0;
   /* top: 62%; */
   margin: 0 auto;
-  width: 15rem;
+  width: 50%;
   bottom: 48%;
   z-index: 2;
 }
@@ -272,7 +272,7 @@
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 53%;
-  width: 5rem;
+  width: 15%;
 }
 .baum2 {
   position: absolute;
@@ -280,7 +280,7 @@
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 3rem;
-  width: 5rem;
+  width: 18%;
 }
 .baum3 {
   position: absolute;
@@ -295,6 +295,7 @@
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 58%;
+  width: 15%;
 }
 .baum5 {
   position: absolute;
@@ -302,6 +303,7 @@
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 3rem;
+  width: 10%;
 }
 
 .skill-row {
@@ -395,7 +397,7 @@
     /* top: 62%; */
     /* margin: 0 auto;     */
     bottom: 60%;
-    width: 8%;
+    width: 6%;
   }
   .baum2 {
     position: absolute;
@@ -403,7 +405,7 @@
     /* top: 62%; */
     /* margin: 0 auto;     */
     bottom: 3rem;
-    width: 8%;
+    width: 6%;
   }
   .baum3 {
     position: absolute;
@@ -411,7 +413,7 @@
     /* top: 62%; */
     /* margin: 0 auto;     */
     bottom: 60%;
-    width: 10%;
+    width: 8%;
   }
   .baum4 {
     position: absolute;
@@ -419,7 +421,7 @@
     /* top: 62%; */
     /* margin: 0 auto;     */
     bottom: 58%;
-    width: 9%;
+    width: 7%;
   }
   .baum5 {
     position: absolute;
@@ -427,7 +429,7 @@
     /* top: 62%; */
     /* margin: 0 auto;     */
     bottom: 3rem;
-    width: 6%;
+    width: 5%;
   }
   .sonne {
     top: 20%;

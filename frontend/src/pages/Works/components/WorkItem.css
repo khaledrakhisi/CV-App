@@ -1,6 +1,6 @@
 .place-item {
-  margin: 1rem 1rem;
-  width: 30%;
+  margin: 1rem .5rem;
+  width: 45%;
   height: 40%;
   display: inline-block;
   /* opacity: 0; */
@@ -61,9 +61,10 @@
 .place-item__tab h2 {
   font-size: 1rem;
 }
-.place-item__tab span {
+.place-item__modal-extra span {
   color: blue;
-  width: 8rem;
+  width: 7rem;
+  /* margin-right: 1rem; */
   display: inline-block;
 }
 .place-item__tab p {
@@ -160,7 +161,7 @@
   overflow-x: hidden;
 }
 
-.place-item__modal-extra {
+.place-item__modal-extra, .place-item__modal-links {
   height: 5rem;
   padding: 0;
   margin: 0;
@@ -170,6 +171,14 @@
   white-space: nowrap;
 }
 
+
+.place-item__modal-links span{
+  color: blue;
+  width: 5rem;
+  /* margin-right: 1rem; */
+  display: inline-block;
+}
+
 /* .place-item__actions button,
   .place-item__actions a {
     margin: 0.5rem;
@@ -177,6 +186,10 @@
    */
 
 @media (min-width: 768px) {
+  .place-item {
+    margin: 1rem 1rem;
+    width: 30%;
+  }
   .place-item__image {
     height: 12.5rem;
   }

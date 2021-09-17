@@ -4,7 +4,7 @@ import TextureBG from "../../shared/components/UIElements/TextureBG";
 import CreateArea from "./components/CreateArea";
 import Note from "./components/Note";
 import useHttpClient from "../../shared/Hooks/useHttpClient";
-import Card from "../../shared/components/UIElements/Card";
+// import Card from "../../shared/components/UIElements/Card";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
 import "./Notes.css";
@@ -12,8 +12,8 @@ import "./Notes.css";
 function Notes(props) {
   const ITEM_DISPLAY_DELAY = 200;
 
-  const [notes, setNotes] = useState();
-  const { isLoading, errorMessage, sendRequest } = useHttpClient();
+  const [notes, setNotes] = useState([]);
+  const { isLoading, sendRequest } = useHttpClient();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,37 +22,27 @@ function Notes(props) {
           `${process.env.REACT_APP_BACKEND_URL}/notes`
         );
 
-        console.log(responseData);
+        // console.log("here  " + responseData);
         setNotes(responseData.notes);
       } catch (err) {}
     };
     fetchData();
   }, [sendRequest]);
 
-  function addNote(newNote) {
+  const addNote = (newNote) => {
     setNotes((prevNotes) => {
+      console.log(prevNotes);
       return [...prevNotes, newNote];
-    });
+    });    
   }
 
-  function deleteNote(id) {
+  const deleteNote = (id) => {
     setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
         return index !== id;
       });
     });
-  }
-
-  if (!!errorMessage) {
-    return (
-      <div className="center">
-        <Card>
-          {" "}
-          <h3>{errorMessage} </h3>{" "}
-        </Card>
-      </div>
-    );
-  }
+  }  
 
   return (
     <React.Fragment>

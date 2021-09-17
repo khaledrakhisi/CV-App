@@ -25,8 +25,8 @@
   text-decoration: none;
 
   opacity: 0;
-  animation: fadeInAnimation ease 1s;
-  animation-delay: .5s;
+  animation: fadeInAnimation ease 500ms;
+  animation-delay: .3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }

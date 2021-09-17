@@ -31,7 +31,7 @@ function CreateArea(props) {
     userId: "",    
     title: "",
     content: "",
-    creationDate: "",
+    created_date: "",
   });
 
   // language actions

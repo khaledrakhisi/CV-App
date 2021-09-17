@@ -18,10 +18,10 @@ function useHttpClient() {
           headers,
           signal: httpAbortCtrl.signal,
         });
+// console.log(response);
 
         const responseData = await response.json();
-        //   console.log(responseData);
-
+          
         activeHttpRequests.current = activeHttpRequests.current.filter(
           (reqCtrl) => reqCtrl !== httpAbortCtrl
         );
@@ -33,12 +33,11 @@ function useHttpClient() {
         setIsLoading(false);
         //   console.log(responseData);
         return responseData;
+
       } catch (err) {
         console.log(err);
         setIsLoading(false);
-        setErrorMessage(
-          err.message || "An Error Happend.Please check the console log."
-        );
+        setErrorMessage(err.message || "An Error Happend. Please check the console log.");
         throw err;
       }
     }, []);

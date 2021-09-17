@@ -40,6 +40,17 @@ app.use((req, res, next)=>{
   throw new HttpError("Backend is ok! but Page not found. " + req.url, 404);
 });
 
+// when we provide four parameters for the 'use' function,
+// express interprets it as an Error Handler middleware
+app.use((error, req, res, next) => {
+  if (res.headerSent) {
+    return next(error);
+  }
+  res
+    .status(error.code || 500)
+    .json({ msg: error.message || "an error accured" });
+});
+
 mongoose
   .connect(DB_URL, {
     useNewUrlParser: true,

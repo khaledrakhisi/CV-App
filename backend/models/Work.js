@@ -22,7 +22,12 @@ const workSchema = mongoose.Schema({
   images: [{ type: String }],
   duration: { start: { type: Date }, end: { type: Date } },
   contractor: { type: String },
-  links: { type: String },
+  links: [
+    {
+      title: { type: String },
+      url: { type: String },
+    },
+  ],
   tags: { type: String, required: true },
 });
 

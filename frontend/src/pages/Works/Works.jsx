@@ -112,7 +112,7 @@ function Works() {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/works/`
         );
-        // console.log(responseData);
+        console.log(responseData);
         setWorks(responseData.works);
       } catch (err) {}
     };

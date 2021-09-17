@@ -31,9 +31,10 @@ function App() {
     setLoggedinUser(false);
   }, []);
 
+  // localStorage.clear();
   let languageStoredInLocalStorage = localStorage.getItem("language");
   let [language, setLanguage] = useState(
-    languageStoredInLocalStorage ? languageStoredInLocalStorage : "US"
+    languageStoredInLocalStorage ? languageStoredInLocalStorage : "EN"
   );
 
   const storeLanguageInLocalStorage = (language) => {
