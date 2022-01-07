@@ -17,6 +17,7 @@
   margin: 0;
   background-color: #d1f1e2;
   height: 10vh;
+  /* display: flex; */
 }
 
 .hr_dotted {
@@ -185,24 +186,34 @@
 }
 
 .azaditurm {
+  /* border: 1px solid red; */
+
   position: absolute;
-  left: 0;
-  /* top: 63%; */
-  /* transform: translate(-50%, -50%); */
-  margin: 0 auto;
-  width: 60%;
-  bottom: 50%;
+  left: 20px;
+  bottom: 43px;
+  width: 200px;
+  height: 210px;  
   z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
 }
 
 .brandenburg {
+  border: 1px solid red;
+
   position: absolute;
-  right: 0;
-  /* top: 62%; */
-  margin: 0 auto;
-  width: 50%;
-  bottom: 48%;
+  /* right: 0px; */
+  left : calc(100vw / 2);
+  bottom: 43px;
+  width: 200px;
+  height: 210px;  
   z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
 }
 
 @keyframes rotating {
@@ -372,18 +383,18 @@
     font-size: 2rem;
   }
 
-  .azaditurm {
-    left: 15%;
-    /* top: 63%; */
-    /* transform: translate(-50%, -50%); */
-    margin: 0 auto;
-    width: 35%;
-    bottom: 50%;
+  .azaditurm {    
+    left: 165px;
+    bottom: 40px;
+    width: 340px;
+    height: 300px;    
   }
+
   .brandenburg {
-    right: 15%;
-    width: 30%;
-    bottom: 48%;
+    right: 160px;
+    bottom: 30px;
+    width: 290px;
+    height: 300px;
   }
   .wolke1,
   .wolke2,

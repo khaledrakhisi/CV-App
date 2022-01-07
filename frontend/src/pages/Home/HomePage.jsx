@@ -7,6 +7,7 @@ import Collapse from "@material-ui/core/Collapse";
 import useHttpClient from "../../shared/Hooks/useHttpClient";
 
 import "./HomePage.css";
+import Tooltip from "../../shared/components/UIElements/Tooltip";
 
 function HomePage(props) {
   let content = {
@@ -31,7 +32,7 @@ function HomePage(props) {
       try {
         // const response = await axios.get("https://geolocation-db.com/json/");
         const response = await sendRequest("https://geolocation-db.com/json/");
-        // console.log(response);        
+        // console.log(response);
         setClientInfo(response);
       } catch (err) {}
     };
@@ -54,8 +55,7 @@ function HomePage(props) {
     fetchData();
   }, [sendRequest]);
 
-  const eh_like_click = async(event) => {
-    
+  const eh_like_click = async (event) => {
     try {
       await sendRequest(
         `${process.env.REACT_APP_BACKEND_URL}/ratings`,
@@ -64,7 +64,7 @@ function HomePage(props) {
           IPv4: clientInfo.IPv4,
           IPv6: "",
           comment: "",
-          city : clientInfo.city || "",
+          city: clientInfo.city || "",
           country_code: clientInfo.country_code || "", //"IR"
           country_name: clientInfo.country_name || "", //"Iran"
           latitude: clientInfo.latitude || "", //35.6961,
@@ -72,13 +72,13 @@ function HomePage(props) {
           postal: clientInfo.postal || "",
           state: clientInfo.state || "", //null,
           rating_type: "like", // "like"
-          created_date: moment().format('YYYY-MM-DD'),
-          modified_date: moment().format('YYYY-MM-DD'),
+          created_date: moment().format("YYYY-MM-DD"),
+          modified_date: moment().format("YYYY-MM-DD"),
           postId: home_page_post_id,
         }),
         { "Content-Type": "Application/json" }
       );
-      setLikesTotal(prev=>(prev||0)+1);
+      setLikesTotal((prev) => (prev || 0) + 1);
     } catch (err) {}
   };
 
@@ -95,10 +95,13 @@ function HomePage(props) {
         <h1 className="title">{content.title}</h1>
         <h3 className="title_description">{content.description}</h3>
         {/* <Zoom in={true}> */}
-          <div className={`title_like zoom ${likesTotal && "is_liked"}`} onClick={eh_like_click}>
-            <i className={`fas fa-heart ${likesTotal && "fa-2x"}`}></i>
-            <span>{likesTotal && likesTotal}</span>
-          </div>
+        <div
+          className={`title_like zoom ${likesTotal && "is_liked"}`}
+          onClick={eh_like_click}
+        >
+          <i className={`fas fa-heart ${likesTotal && "fa-2x"}`}></i>
+          <span>{likesTotal && likesTotal}</span>
+        </div>
         {/* </Zoom> */}
         <div
           className="sonne"
@@ -133,16 +136,36 @@ function HomePage(props) {
           })`,
         }}
       >
-        <img
-          className="azaditurm"
-          src={process.env.PUBLIC_URL + "images/homepage/azadi.png"}
-          alt=""
-        />
-        <img
-          className="brandenburg"
-          src={process.env.PUBLIC_URL + "images/homepage/brandenburg2.png"}
-          alt=""
-        />
+        <div className="azaditurm">
+          <Tooltip left={0} width={130} renderDelay={6} bulbOffset={100}>
+            <span
+              style={{ color: "blue", fontWeight: "bold", fontSize: "15px" }}
+            >
+              Azadi Tower
+            </span>
+            , Teheran-Iran
+          </Tooltip>
+
+          <img
+            src={process.env.PUBLIC_URL + "images/homepage/azadi.png"}
+            alt="Azadi tower cannot be loaded"
+          />
+        </div>
+        <div className="brandenburg">
+          <Tooltip right={0} bulbOffset={10} width={150} renderDelay={10}>
+            <span
+              style={{ color: "brown", fontWeight: "bold", fontSize: "15px" }}
+            >
+              Brandenburg Gate
+            </span>
+            , Berlin-Germany
+          </Tooltip>
+
+          <img
+            src={process.env.PUBLIC_URL + "images/homepage/brandenburg2.png"}
+            alt="brandenburg gate cannot be loaded"
+          />
+        </div>
         <Collapse in={true} style={{ transitionDelay: "2s" }}>
           <img
             className="baum1"
