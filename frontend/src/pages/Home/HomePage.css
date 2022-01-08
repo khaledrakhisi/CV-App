@@ -185,14 +185,6 @@
   width: 20%;
 }
 
-.land{
-  border: 1px solid yellow;
-
-  position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .azaditurm {
   border: 1px solid red;
 
