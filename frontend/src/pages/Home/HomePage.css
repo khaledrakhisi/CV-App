@@ -411,7 +411,7 @@
     width: 6%;
   }
   .baum2 {
-    position: absolute;
+    /* position: absolute; */
     left: 15%;
     /* top: 62%; */
     /* margin: 0 auto;     */
@@ -435,7 +435,7 @@
     width: 7%;
   }
   .baum5 {
-    position: absolute;
+    /* position: absolute; */
     left: 20%;
     /* top: 62%; */
     /* margin: 0 auto;     */
