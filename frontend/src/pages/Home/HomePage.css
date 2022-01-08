@@ -185,11 +185,19 @@
   width: 20%;
 }
 
-.azaditurm {
-  /* border: 1px solid red; */
+.land{
+  border: 1px solid yellow;
 
   position: absolute;
-  left: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.azaditurm {
+  border: 1px solid red;
+
+  position: absolute;
+  right : calc(50vw - 10px);
   bottom: 43px;
   width: 200px;
   height: 210px;  
@@ -205,7 +213,7 @@
 
   position: absolute;
   /* right: 0px; */
-  left : calc(100vw / 2);
+  left : calc(50vw - 10px);
   bottom: 43px;
   width: 200px;
   height: 210px;  
@@ -384,17 +392,17 @@
   }
 
   .azaditurm {    
-    left: 165px;
-    bottom: 40px;
-    width: 340px;
-    height: 300px;    
+    right : calc(50vw);
+    bottom: 35px;
+    width: 440px;
+    height: 380px;    
   }
 
   .brandenburg {
-    right: 160px;
+    left : calc(50vw + 60px);
     bottom: 30px;
-    width: 290px;
-    height: 300px;
+    width: 390px;
+    height: 380px;
   }
   .wolke1,
   .wolke2,
