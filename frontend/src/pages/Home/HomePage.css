@@ -184,13 +184,42 @@
   margin-left: 30px;
   width: 20%;
 }
+.lands{
+  border: 1px solid green;
 
-.azaditurm {
-  /* border: 1px solid red; */
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 
   position: absolute;
-  left: 20px;
-  bottom: 43px;
+  bottom: 45px;  
+  height: 300px;
+  width: 95%;
+
+  /* centering  */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.land{
+  border: 1px solid yellow;
+
+  width: 50%;
+  height: 300px;
+  /* bottom: 45px; */
+
+  /* position: absolute; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.azaditurm {
+  border: 1px solid red;
+
+  position: absolute;
+  /* left: 10px; */
+  /* bottom: -6px; */
   width: 200px;
   height: 210px;  
   z-index: 2;
@@ -205,8 +234,8 @@
 
   position: absolute;
   /* right: 0px; */
-  left : calc(100vw / 2);
-  bottom: 43px;
+  /* left : calc(100vw / 2); */
+  /* bottom: -6px; */
   width: 200px;
   height: 210px;  
   z-index: 2;
@@ -279,41 +308,43 @@
 
 .baum1 {
   position: absolute;
-  right: 30%;
+  /* right: 30%; */
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 53%;
-  width: 15%;
+  bottom: 3px;
+  width: 12%;
+  z-index: 3;
 }
 .baum2 {
-  /* position: absolute; */
-  left: 0;
+  position: absolute;
+  /* left: 10px; */
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 3rem;
-  width: 18%;
+  bottom: 5px;
+  width: 15%;
+  z-index: 3;
 }
 .baum3 {
   position: absolute;
   right: 10rem;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 60%;
+  bottom: 5px;
 }
 .baum4 {
   position: absolute;
   right: 1%;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 58%;
+  bottom: 5px;
   width: 15%;
 }
 .baum5 {
-  /* position: absolute; */
-  left: 4.2rem;
+  position: absolute;
+  left: 0px;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 3rem;
+  bottom: 7px;
   width: 10%;
 }
 
@@ -383,17 +414,21 @@
     font-size: 2rem;
   }
 
+  .land{
+    width: 400px;
+  }
+
   .azaditurm {    
-    left: 165px;
-    bottom: 40px;
-    width: 340px;
+    /* left: 165px; */
+    /* bottom: 40px; */
+    width: 370px;
     height: 300px;    
   }
 
   .brandenburg {
-    right: 160px;
-    bottom: 30px;
-    width: 290px;
+    /* right: 160px; */
+    /* bottom: 30px; */
+    width: 330px;
     height: 300px;
   }
   .wolke1,
@@ -404,43 +439,43 @@
   }
   .baum1 {
     position: absolute;
-    right: 40%;
+    /* right: 40%; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 60%;
-    width: 6%;
+    /* bottom: 60%; */
+    width: 70px;
   }
   .baum2 {
     /* position: absolute; */
-    left: 15%;
+    /* left: 15%; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 3rem;
-    width: 6%;
+    /* bottom: 3rem; */
+    width: 70px;
   }
   .baum3 {
     position: absolute;
-    right: 25rem;
+    /* right: 25rem; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 60%;
-    width: 8%;
+    /* bottom: 60%; */
+    width: 80px;
   }
   .baum4 {
     position: absolute;
     right: 13%;
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 58%;
-    width: 7%;
+    /* bottom: 58%; */
+    width: 70px;
   }
   .baum5 {
     /* position: absolute; */
-    left: 20%;
+    /* left: 0; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 3rem;
-    width: 5%;
+    /* bottom: 3rem; */
+    width: 50px;
   }
   .sonne {
     top: 20%;

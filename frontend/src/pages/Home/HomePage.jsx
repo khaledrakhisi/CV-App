@@ -136,62 +136,76 @@ function HomePage(props) {
           })`,
         }}
       >
-        <div className="azaditurm">
-          <Tooltip left={0} width={130} renderDelay={6} bulbOffset={100}>
-            <span
-              style={{ color: "blue", fontWeight: "bold", fontSize: "15px" }}
-            >
-              Azadi Tower
-            </span>
-            , Teheran-Iran
-          </Tooltip>
+        <div className="lands">
+          <div className="land">
+            <img
+              className="baum2"
+              src={process.env.PUBLIC_URL + "images/homepage/baum2.png"}
+              alt=""
+            />
+            <img
+              className="baum5"
+              src={process.env.PUBLIC_URL + "images/homepage/baum4.png"}
+              alt=""
+            />
+            <div className="azaditurm">
+              <Tooltip left={0} width={130} renderDelay={6} bulbOffset={100}>
+                <span
+                  style={{
+                    color: "blue",
+                    fontWeight: "bold",
+                    fontSize: "15px",
+                  }}
+                >
+                  Azadi Tower
+                </span>
+                , Teheran-Iran
+              </Tooltip>
 
-          <img
-            src={process.env.PUBLIC_URL + "images/homepage/azadi.png"}
-            alt="Azadi tower cannot be loaded"
-          />
-        </div>
-        <div className="brandenburg">
-          <Tooltip right={0} bulbOffset={10} width={150} renderDelay={10}>
-            <span
-              style={{ color: "brown", fontWeight: "bold", fontSize: "15px" }}
-            >
-              Brandenburg Gate
-            </span>
-            , Berlin-Germany
-          </Tooltip>
+              <img
+                src={process.env.PUBLIC_URL + "images/homepage/azadi.png"}
+                alt="Azadi tower cannot be loaded"
+              />
+            </div>
+          </div>
+          <div className="land">
+            {/* <Collapse in={true} style={{ transitionDelay: "2s" }}> */}
+            <img
+              className="baum1"
+              src={process.env.PUBLIC_URL + "images/homepage/baum1.png"}
+              alt=""
+            />
+            {/* </Collapse>           */}
+            <div className="brandenburg">
+              <Tooltip right={0} bulbOffset={10} width={150} renderDelay={10}>
+                <span
+                  style={{
+                    color: "brown",
+                    fontWeight: "bold",
+                    fontSize: "15px",
+                  }}
+                >
+                  Brandenburg Gate
+                </span>
+                , Berlin-Germany
+              </Tooltip>
 
-          <img
-            src={process.env.PUBLIC_URL + "images/homepage/brandenburg2.png"}
-            alt="brandenburg gate cannot be loaded"
-          />
+              <img
+                src={
+                  process.env.PUBLIC_URL + "images/homepage/brandenburg2.png"
+                }
+                alt="brandenburg gate cannot be loaded"
+              />
+            </div>
+            {/* <Collapse in={true} style={{ transitionDelay: "3s" }}> */}
+            <img
+              className="baum4"
+              src={process.env.PUBLIC_URL + "images/homepage/baum2.png"}
+              alt=""
+            />
+            {/* </Collapse> */}
+          </div>
         </div>
-        <Collapse in={true} style={{ transitionDelay: "2s" }}>
-          <img
-            className="baum1"
-            src={process.env.PUBLIC_URL + "images/homepage/baum1.png"}
-            alt=""
-          />
-        </Collapse>
-        <Collapse in={true} style={{ transitionDelay: "1s" }}>
-          <img
-            className="baum2"
-            src={process.env.PUBLIC_URL + "images/homepage/baum2.png"}
-            alt=""
-          />
-        </Collapse>
-        <Collapse in={true} style={{ transitionDelay: "3s" }}>
-          <img
-            className="baum4"
-            src={process.env.PUBLIC_URL + "images/homepage/baum2.png"}
-            alt=""
-          />
-        </Collapse>
-        <img
-          className="baum5"
-          src={process.env.PUBLIC_URL + "images/homepage/baum4.png"}
-          alt=""
-        />
       </div>
     </React.Fragment>
   );
