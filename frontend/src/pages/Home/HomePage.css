@@ -185,14 +185,14 @@
   width: 20%;
 }
 .lands{
-  border: 1px solid green;
+  /* border: 1px solid green; */
 
   display:flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: center;
 
   position: absolute;
-  bottom: 45px;  
+  bottom: 35px;  
   height: 300px;
   width: 95%;
 
@@ -202,22 +202,22 @@
   right: 0;
 }
 .land{
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 
   width: 50%;
   height: 300px;
   /* bottom: 45px; */
 
-  /* position: absolute; */
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
 .azaditurm {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
-  position: absolute;
+  position: relative;
   /* left: 10px; */
   /* bottom: -6px; */
   width: 200px;
@@ -230,9 +230,9 @@
 }
 
 .brandenburg {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
-  position: absolute;
+  position: relative;
   /* right: 0px; */
   /* left : calc(100vw / 2); */
   /* bottom: -6px; */
@@ -243,6 +243,33 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;  
+}
+
+.time{
+  position: absolute;
+  bottom: -30px;
+
+  /* centering */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.time span{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+
+  color: #1b5a29;  
+}
+
+@keyframes zoom_animation {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1.5);
+  }
 }
 
 @keyframes rotating {
@@ -308,44 +335,45 @@
 
 .baum1 {
   position: absolute;
-  /* right: 30%; */
+  left: 30px;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 3px;
-  width: 12%;
+  bottom: 7px;
+  width: 22%;
   z-index: 3;
 }
 .baum2 {
   position: absolute;
-  /* left: 10px; */
+  left: 10px;
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 5px;
-  width: 15%;
+  width: 20%;
   z-index: 3;
 }
 .baum3 {
   position: absolute;
-  right: 10rem;
+  /* right: 10rem; */
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 5px;
 }
 .baum4 {
   position: absolute;
-  right: 1%;
+  right: 25px;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 5px;
+  bottom: 20px;
   width: 15%;
 }
 .baum5 {
   position: absolute;
-  left: 0px;
+  left: 25px;
+  /* right: 20px; */
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 7px;
-  width: 10%;
+  width: 18%;
 }
 
 .skill-row {
@@ -438,7 +466,7 @@
     width: 8%;
   }
   .baum1 {
-    position: absolute;
+    /* position: absolute; */
     /* right: 40%; */
     /* top: 62%; */
     /* margin: 0 auto;     */
@@ -454,7 +482,7 @@
     width: 70px;
   }
   .baum3 {
-    position: absolute;
+    /* position: absolute; */
     /* right: 25rem; */
     /* top: 62%; */
     /* margin: 0 auto;     */
@@ -462,8 +490,9 @@
     width: 80px;
   }
   .baum4 {
-    position: absolute;
-    right: 13%;
+    /* position: absolute; */
+    /* right: 13%; */
+    /* left: 10px; */
     /* top: 62%; */
     /* margin: 0 auto;     */
     /* bottom: 58%; */
@@ -471,10 +500,10 @@
   }
   .baum5 {
     /* position: absolute; */
-    /* left: 0; */
+    left: 70px;
     /* top: 62%; */
     /* margin: 0 auto;     */
-    /* bottom: 3rem; */
+    bottom: 20px;
     width: 50px;
   }
   .sonne {

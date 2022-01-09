@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from "react";
-
 import moment from "moment";
-// import { Zoom } from "@material-ui/core";
-import Collapse from "@material-ui/core/Collapse";
+import momentTZ from "moment-timezone";
+import { Collapse, Zoom } from "@material-ui/core";
 
 import useHttpClient from "../../shared/Hooks/useHttpClient";
+import Tooltip from "../../shared/components/UIElements/Tooltip";
 
 import "./HomePage.css";
-import Tooltip from "../../shared/components/UIElements/Tooltip";
 
 function HomePage(props) {
   let content = {
     EN: {
       title: "I'm khaled",
       description: "a software developer",
+      tooltip1: "Azadi Tower, Tehran-Iran",
+      tooltip2: "Brandenburg Gate, Berlin-Germany",
     },
     DE: {
       title: "Ich bin Khaled",
       description: "ein Software Entwickler",
+      tooltip1: "Azadi Turm, Tehran-Iran",
+      tooltip2: "Brandenburg Tor, Berlin-Deutschland",
     },
   };
   content = props.language === "EN" ? content.EN : content.DE;
@@ -26,6 +29,17 @@ function HomePage(props) {
   const { isLoading, sendRequest } = useHttpClient();
   const [clientInfo, setClientInfo] = useState();
   const [likesTotal, setLikesTotal] = useState();
+  const [timeIRS, setTimeIRS] = useState("00:00:00 AM");
+  const [timeCET, setTimeCET] = useState("00:00:00 AM");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeIRS(moment(momentTZ().tz("Asia/Iran")).format("hh:mm:ss A"));
+      setTimeCET(moment(momentTZ().tz("Europe/Berlin")).format("hh:mm:ss A"));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -149,7 +163,7 @@ function HomePage(props) {
               alt=""
             />
             <div className="azaditurm">
-              <Tooltip left={0} width={130} renderDelay={6} bulbOffset={100}>
+              <Tooltip left={10} width={130} renderDelay={6} bulbOffset={100}>
                 <span
                   style={{
                     color: "blue",
@@ -157,15 +171,20 @@ function HomePage(props) {
                     fontSize: "15px",
                   }}
                 >
-                  Azadi Tower
+                  {content.tooltip1.substring(0, content.tooltip1.indexOf(","))}
                 </span>
-                , Teheran-Iran
+                {content.tooltip1.substring(content.tooltip1.indexOf(","))}
               </Tooltip>
 
               <img
                 src={process.env.PUBLIC_URL + "images/homepage/azadi.png"}
                 alt="Azadi tower cannot be loaded"
               />
+              <Zoom in={true}>
+                <div className="time">
+                  <span className="time-clock"> {timeIRS} </span>
+                </div>        
+                </Zoom>      
             </div>
           </div>
           <div className="land">
@@ -185,9 +204,9 @@ function HomePage(props) {
                     fontSize: "15px",
                   }}
                 >
-                  Brandenburg Gate
+                  {content.tooltip2.substring(0, content.tooltip2.indexOf(","))}
                 </span>
-                , Berlin-Germany
+                {content.tooltip2.substring(content.tooltip2.indexOf(","))}
               </Tooltip>
 
               <img
@@ -196,6 +215,11 @@ function HomePage(props) {
                 }
                 alt="brandenburg gate cannot be loaded"
               />
+              <Zoom in={true}>
+                <div className="time">
+                  <span className="time-clock"> {timeCET} </span>
+                </div>      
+              </Zoom>
             </div>
             {/* <Collapse in={true} style={{ transitionDelay: "3s" }}> */}
             <img
