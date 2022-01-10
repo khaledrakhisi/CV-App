@@ -50,13 +50,20 @@
   line-height: 1;
 }
 .title_like {
+  position: absolute;
+
   padding: 0.5rem;  
   background-color: #0ab7c7;
   color: #ffffff;
   width: 4rem;
-  border-radius: 8px;
-  margin: auto;
-  cursor: pointer;
+  border-radius: 8px;  
+  cursor: pointer;  
+
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+
+  z-index: 6;
 }
 .title_like.is_liked{
   color: #ff0000;
@@ -184,13 +191,60 @@
   margin-left: 30px;
   width: 20%;
 }
+.lands{
+  /* border: 1px solid green; */
 
-.azaditurm {
-  border: 1px solid red;
+  display:flex;
+  /* flex-direction: row; */
+  justify-content: center;
 
   position: absolute;
-  right : calc(50vw - 10px);
-  bottom: 43px;
+  bottom: 35px;  
+  height: 300px;
+  width: 95%;
+
+  /* centering  */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.land{
+  /* border: 1px solid yellow; */
+
+  width: 50%;
+  height: 300px;
+  /* bottom: 45px; */
+
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+.azaditurm {
+  /* border: 1px solid red; */
+
+  position: relative;
+  /* left: 10px; */
+  /* bottom: -6px; */
+  width: 200px;
+  height: 210px;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brandenburg {
+  /* border: 1px solid red; */
+
+  position: relative;
+  /* right: 0px; */
+  /* left : calc(100vw / 2); */
+  /* bottom: -6px; */
   width: 200px;
   height: 210px;  
   z-index: 2;
@@ -200,20 +254,22 @@
   justify-content: space-between;  
 }
 
-.brandenburg {
-  border: 1px solid red;
-
+.time{
   position: absolute;
-  /* right: 0px; */
-  left : calc(50vw - 10px);
-  bottom: 43px;
-  width: 200px;
-  height: 210px;  
-  z-index: 2;
+  bottom: -30px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;  
+  /* centering */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.time span{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+
+  color: #1b5a29;  
 }
 
 @keyframes rotating {
@@ -261,6 +317,8 @@
   top: 1rem;
   animation: animation_wolke 19s infinite linear;
   width: 15%;
+
+  z-index: 11;
 }
 .wolke2 {
   position: absolute;
@@ -268,6 +326,8 @@
   top: 33%;
   animation: animation_wolke 15s infinite linear;
   width: 15%;
+
+  z-index: 3;
 }
 .wolke3 {
   position: absolute;
@@ -275,46 +335,51 @@
   top: 60%;
   animation: animation_wolke 25s infinite linear;
   width: 15%;
+
+  z-index: 3;
 }
 
 .baum1 {
   position: absolute;
-  right: 30%;
+  left: 30px;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 53%;
-  width: 15%;
+  bottom: 7px;
+  width: 22%;
+  z-index: 3;
 }
 .baum2 {
   position: absolute;
-  left: 0;
+  left: 10px;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 3rem;
-  width: 18%;
+  bottom: 5px;
+  width: 20%;
+  z-index: 3;
 }
 .baum3 {
   position: absolute;
-  right: 10rem;
+  /* right: 10rem; */
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 60%;
+  bottom: 5px;
 }
 .baum4 {
   position: absolute;
-  right: 1%;
+  right: 15px;
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 58%;
+  bottom: 20px;
   width: 15%;
 }
 .baum5 {
   position: absolute;
-  left: 4.2rem;
+  left: 25px;
+  /* right: 20px; */
   /* top: 62%; */
   /* margin: 0 auto;     */
-  bottom: 3rem;
-  width: 10%;
+  bottom: 7px;
+  width: 18%;
 }
 
 .skill-row {
@@ -383,18 +448,22 @@
     font-size: 2rem;
   }
 
+  .land{
+    width: 400px;
+  }
+
   .azaditurm {    
-    right : calc(50vw);
-    bottom: 35px;
-    width: 440px;
-    height: 380px;    
+    /* left: 165px; */
+    /* bottom: 40px; */
+    width: 370px;
+    height: 300px;    
   }
 
   .brandenburg {
-    left : calc(50vw + 60px);
-    bottom: 30px;
-    width: 390px;
-    height: 380px;
+    /* right: 160px; */
+    /* bottom: 30px; */
+    width: 330px;
+    height: 300px;
   }
   .wolke1,
   .wolke2,
@@ -403,44 +472,45 @@
     width: 8%;
   }
   .baum1 {
-    position: absolute;
-    right: 40%;
+    /* position: absolute; */
+    /* right: 40%; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 60%;
-    width: 6%;
+    /* bottom: 60%; */
+    width: 70px;
   }
   .baum2 {
-    position: absolute;
-    left: 15%;
+    /* position: absolute; */
+    /* left: 15%; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 3rem;
-    width: 6%;
+    /* bottom: 3rem; */
+    width: 70px;
   }
   .baum3 {
-    position: absolute;
-    right: 25rem;
+    /* position: absolute; */
+    /* right: 25rem; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 60%;
-    width: 8%;
+    /* bottom: 60%; */
+    width: 80px;
   }
   .baum4 {
-    position: absolute;
-    right: 13%;
+    /* position: absolute; */
+    /* right: 13%; */
+    /* left: 10px; */
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 58%;
-    width: 7%;
+    /* bottom: 58%; */
+    width: 70px;
   }
   .baum5 {
-    position: absolute;
-    left: 20%;
+    /* position: absolute; */
+    left: 70px;
     /* top: 62%; */
     /* margin: 0 auto;     */
-    bottom: 3rem;
-    width: 5%;
+    bottom: 20px;
+    width: 50px;
   }
   .sonne {
     top: 20%;
