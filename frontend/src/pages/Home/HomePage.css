@@ -63,7 +63,7 @@
   right: 0;
   left: 0;
 
-  z-index: 1;
+  z-index: 6;
 }
 .title_like.is_liked{
   color: #ff0000;
@@ -230,12 +230,12 @@
   /* left: 10px; */
   /* bottom: -6px; */
   width: 200px;
-  height: 210px;  
+  height: 210px;
   z-index: 2;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  
+  justify-content: space-between;
 }
 
 .brandenburg {
@@ -318,7 +318,7 @@
   animation: animation_wolke 19s infinite linear;
   width: 15%;
 
-  z-index: 3;
+  z-index: 11;
 }
 .wolke2 {
   position: absolute;
