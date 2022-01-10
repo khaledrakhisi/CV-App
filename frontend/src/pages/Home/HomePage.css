@@ -50,13 +50,20 @@
   line-height: 1;
 }
 .title_like {
+  position: absolute;
+
   padding: 0.5rem;  
   background-color: #0ab7c7;
   color: #ffffff;
   width: 4rem;
-  border-radius: 8px;
-  margin: auto;
-  cursor: pointer;
+  border-radius: 8px;  
+  cursor: pointer;  
+
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+
+  z-index: 1;
 }
 .title_like.is_liked{
   color: #ff0000;
@@ -212,6 +219,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+
+  z-index: 5;
 }
 
 .azaditurm {
@@ -263,15 +272,6 @@
   color: #1b5a29;  
 }
 
-@keyframes zoom_animation {
-  0%{
-    transform: scale(0);
-  }
-  100%{
-    transform: scale(1.5);
-  }
-}
-
 @keyframes rotating {
   0% {
     transform: rotate(0deg);
@@ -317,6 +317,8 @@
   top: 1rem;
   animation: animation_wolke 19s infinite linear;
   width: 15%;
+
+  z-index: 3;
 }
 .wolke2 {
   position: absolute;
@@ -324,6 +326,8 @@
   top: 33%;
   animation: animation_wolke 15s infinite linear;
   width: 15%;
+
+  z-index: 3;
 }
 .wolke3 {
   position: absolute;
@@ -331,6 +335,8 @@
   top: 60%;
   animation: animation_wolke 25s infinite linear;
   width: 15%;
+
+  z-index: 3;
 }
 
 .baum1 {
@@ -360,7 +366,7 @@
 }
 .baum4 {
   position: absolute;
-  right: 25px;
+  right: 15px;
   /* top: 62%; */
   /* margin: 0 auto;     */
   bottom: 20px;

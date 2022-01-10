@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import momentTZ from "moment-timezone";
-import { Collapse, Zoom } from "@material-ui/core";
+import { Zoom } from "@material-ui/core";
 
 import useHttpClient from "../../shared/Hooks/useHttpClient";
 import Tooltip from "../../shared/components/UIElements/Tooltip";
@@ -19,7 +19,7 @@ function HomePage(props) {
     DE: {
       title: "Ich bin Khaled",
       description: "ein Software Entwickler",
-      tooltip1: "Azadi Turm, Tehran-Iran",
+      tooltip1: "Azadi Turm, Teheran-Iran",
       tooltip2: "Brandenburg Tor, Berlin-Deutschland",
     },
   };
