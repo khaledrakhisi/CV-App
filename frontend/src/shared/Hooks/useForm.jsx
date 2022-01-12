@@ -43,6 +43,7 @@ const formReducer = (state, action) => {
 };
 
 function useFormValidity(inputElements, initialValidity) {
+  
   const [inputState, dispatch] = useReducer(formReducer, {
     inputElements: inputElements,
     isFormValid: initialValidity,

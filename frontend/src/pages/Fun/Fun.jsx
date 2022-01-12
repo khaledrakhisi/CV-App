@@ -8,7 +8,6 @@ function Fun() {
   return (
     <React.Fragment>
       <TextureBG bg="bg__fun" />
-
       <div className="blog-main"></div>
     </React.Fragment>
   );
