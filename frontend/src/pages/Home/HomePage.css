@@ -316,7 +316,7 @@
   left: 10rem;
   top: 1rem;
   animation: animation_wolke 19s infinite linear;
-  width: 15%;
+  width: 50px;
 
   z-index: 11;
 }
@@ -325,7 +325,7 @@
   right: 10rem;
   top: 33%;
   animation: animation_wolke 15s infinite linear;
-  width: 15%;
+  width: 50px;
 
   z-index: 3;
 }
@@ -334,7 +334,7 @@
   right: 15rem;
   top: 60%;
   animation: animation_wolke 25s infinite linear;
-  width: 15%;
+  width: 50px;
 
   z-index: 3;
 }
@@ -469,7 +469,7 @@
   .wolke2,
   .wolke3 {
     /* top: 60%; */
-    width: 8%;
+    width: 80px;
   }
   .baum1 {
     /* position: absolute; */
