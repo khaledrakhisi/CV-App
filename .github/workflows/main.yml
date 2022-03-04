@@ -20,6 +20,6 @@ jobs:
         server: khaledr.ir
         username: khaledri
         password: ${{ secrets.ftp_password }}
-        server-dir: /project/
+        server-dir: /public_html/
         local-dir: ./frontend/build/
           
