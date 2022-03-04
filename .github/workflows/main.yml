@@ -13,5 +13,5 @@ jobs:
       with:
         server: ftp.mhmdhoseinzade.ir
         username: mhmdhose
-        password: ${{ secrets.FTP_PASSWORD }}
+        password: ${{ secrets.ftp_password }}
         server-dir: /project/
