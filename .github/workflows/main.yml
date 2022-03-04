@@ -9,8 +9,10 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v2.3.2
     - run: "npm install"  
+      working-directory: frontend
     - run: "npm run build"
       working-directory: frontend
+      
 
     - name:  Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
