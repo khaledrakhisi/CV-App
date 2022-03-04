@@ -4,7 +4,6 @@ import TextureBG from "../../shared/components/UIElements/TextureBG";
 import CreateArea from "./components/CreateArea";
 import Note from "./components/Note";
 import useHttpClient from "../../shared/Hooks/useHttpClient";
-// import Card from "../../shared/components/UIElements/Card";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
 import "./Notes.css";
