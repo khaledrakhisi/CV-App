@@ -18,7 +18,6 @@ function useHttpClient() {
           headers,
           signal: httpAbortCtrl.signal,
         });
-// console.log(response);
 
         const responseData = await response.json();
           
@@ -31,7 +30,7 @@ function useHttpClient() {
         }
 
         setIsLoading(false);
-        //   console.log(responseData);
+      
         return responseData;
 
       } catch (err) {
@@ -41,7 +40,6 @@ function useHttpClient() {
         throw err;
       }
     }, []);
-  //   sendReuest();
 
   useEffect(() => {
     return () => {
