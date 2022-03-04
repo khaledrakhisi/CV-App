@@ -9,7 +9,8 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v2.3.2
     - run: "npm run build"
-    
+      working-directory: dart_project
+      
     - name:  Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
