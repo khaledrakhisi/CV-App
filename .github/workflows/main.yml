@@ -21,3 +21,7 @@ jobs:
         username: khaledri
         password: ${{ secrets.ftp_password }}
         server-dir: /project/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
