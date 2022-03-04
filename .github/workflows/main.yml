@@ -21,7 +21,5 @@ jobs:
         username: khaledri
         password: ${{ secrets.ftp_password }}
         server-dir: /project/
-        exclude: |
-          /node_modules
-          /.git
+        local-dir: ./frontend/build/
           
