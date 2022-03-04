@@ -11,13 +11,13 @@ import "./HomePage.css";
 function HomePage(props) {
   let content = {
     EN: {
-      title: "I am khaled!",
+      title: "I'm khaled",
       description: "a software developer",
       tooltip1: "Azadi Tower, Tehran-Iran",
       tooltip2: "Brandenburg Gate, Berlin-Germany",
     },
     DE: {
-      title: "Ich bin Khaled!",
+      title: "Ich bin Khaled",
       description: "ein Software Entwickler",
       tooltip1: "Azadi Turm, Teheran-Iran",
       tooltip2: "Brandenburg Tor, Berlin-Deutschland",
