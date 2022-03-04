@@ -101,9 +101,7 @@ function HomePage(props) {
       <div
         className="top_container"
         style={{
-          backgroundImage: `url(${
-            process.env.PUBLIC_URL + "images/homepage/himmel.png"
-          })`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + "images/homepage/himmel.png"})`,
         }}
       >
         <h1 className="title">{content.title}</h1>

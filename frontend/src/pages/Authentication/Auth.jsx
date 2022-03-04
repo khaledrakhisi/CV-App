@@ -4,7 +4,6 @@ import { useContext } from "react";
 
 import Input from "../../shared/components/UIElements/Input";
 import Button from "../../shared/components/UIElements/Button";
-import "./Auth.css";
 import useFormValidity from "../../shared/Hooks/useForm";
 import useHttpClient from "../../shared/Hooks/useHttpClient";
 import {
@@ -16,6 +15,8 @@ import Card from "../../shared/components/UIElements/Card";
 import { AuthContext } from "../../shared/components/context/AuthContext";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+
+import "./Auth.css";
 
 function Auth() {
   const [isSignupMode, setIsSignupMode] = useState(false);
