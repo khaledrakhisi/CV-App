@@ -44,9 +44,7 @@ function HomePage(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await axios.get("https://geolocation-db.com/json/");
         const response = await sendRequest("https://geolocation-db.com/json/");
-        // console.log(response);
         setClientInfo(response);
       } catch (err) {}
     };
@@ -62,7 +60,6 @@ function HomePage(props) {
         const response = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/ratings/${home_page_post_id}`
         );
-        // console.log(response);
         setLikesTotal(response.ratings.length);
       } catch (err) {}
     };
@@ -106,7 +103,6 @@ function HomePage(props) {
       >
         <h1 className="title">{content.title}</h1>
         <h3 className="title_description">{content.description}</h3>
-        {/* <Zoom in={true}> */}
         <div
           className={`title_like zoom ${likesTotal && "is_liked"}`}
           onClick={eh_like_click}
@@ -114,7 +110,6 @@ function HomePage(props) {
           <i className={`fas fa-heart ${likesTotal && "fa-2x"}`}></i>
           <span>{likesTotal && likesTotal}</span>
         </div>
-        {/* </Zoom> */}
         <div
           className="sonne"
           style={{
@@ -186,13 +181,12 @@ function HomePage(props) {
             </div>
           </div>
           <div className="land">
-            {/* <Collapse in={true} style={{ transitionDelay: "2s" }}> */}
             <img
               className="baum1"
               src={process.env.PUBLIC_URL + "images/homepage/baum1.png"}
               alt=""
             />
-            {/* </Collapse>           */}
+          
             <div className="brandenburg">
               <Tooltip right={0} bulbOffset={10} width={150} renderDelay={10}>
                 <span
