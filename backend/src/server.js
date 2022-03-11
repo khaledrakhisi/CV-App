@@ -58,7 +58,7 @@ mongoose
     useCreateIndex: true,
   })  
   .then(() => {
-    console.log(`Connecting to the database was successfully!`);
+    console.log(`Connecting to the database was successfull!`);
     // if connection to the db was ok then
     app.listen(PORT, (err) => {
       if (err) console.log(err);

@@ -4,8 +4,8 @@
   "description": "my personal web app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "mocha 'src/tests/*.test.js' --recursive --timeout 60000 --exit",
+    "start": "nodemon src/server.js"
   },
   "author": "khaled rakhisi",
   "license": "ISC",
@@ -16,6 +16,9 @@
     "mongoose-unique-validator": "^2.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "mocha": "^9.2.1",
+    "nodemon": "^2.0.12",
+    "should": "^13.2.3",
+    "supertest": "^6.2.2"
   }
 }
