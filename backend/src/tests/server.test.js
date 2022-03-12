@@ -14,7 +14,7 @@ describe("SAMPLE unit test", function () {
     // console.log(server.get("/"));
     server
       .get("/")
-      .expect("Content-type", /json/)
+      .expect("Content-type", "application/json")
       .expect(404) // THis is HTTP response
       .end(function (err, res) {
         // HTTP status should be 200
