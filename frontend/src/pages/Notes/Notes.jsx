@@ -66,8 +66,7 @@ function Notes(props) {
           })}
 
         {isLoading && (
-          <div className="center">
-            {" "}
+          <div className="center">            
             <LoadingSpinner />
           </div>
         )}

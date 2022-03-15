@@ -40,11 +40,8 @@
 .note button {
   position: relative;
   float: right;
-  /* margin-right: 10px; */
   color: #31326f;
   border: none;
-  /* width: 36px; */
-  /* height: 36px; */
   cursor: pointer;
   padding: 0;
   outline: none;

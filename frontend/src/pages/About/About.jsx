@@ -82,8 +82,7 @@ function About(props) {
               <h2>{content.title1}</h2>
 
               <p>{content.bio}</p>
-
-              {/* <div className="column2"> */}
+              
                 <h2>{content.title2}</h2>
                 <p className="address">
                   <span>{resume.main.name}</span>
@@ -109,8 +108,7 @@ function About(props) {
                       </li>
                     );
                   })}
-                </ul>
-              {/* </div> */}                        
+                </ul>              
               <div className="download">
                 <a href={resume.main.resumedownload} className="button">
                 <i className="fas fa-cloud-download-alt"></i>  {content.download}
