@@ -99,7 +99,6 @@ function CreateArea(props) {
     <ErrorModal errorMessage={errorMessage} onClose={clearError} language={props.language}/>
 
       <Grow in={true} style={{ transitionDelay: "300ms" }}>
-      {/* <Collapse in={isExpanded} collapsedSize={80}> */}
         <form className="create-note">
         {isLoading && <LoadingSpinner asOverlay />}
         
@@ -129,7 +128,6 @@ function CreateArea(props) {
             </Fab>
           </Zoom>
         </form>
-        {/* </Collapse> */}
       </Grow>
     </div>
   );

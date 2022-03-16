@@ -40,8 +40,6 @@ function Input(props) {
       onInput(id, value, isValid);
   }, [id, value, isValid, onInput]);
 
-  // console.log(state);
-
   const eh_input_Change = (event) => {
     let action = { 
       type: "CHANGE", 
@@ -49,7 +47,6 @@ function Input(props) {
       validators: props.validators,
     };
     dispatch(action);
-    // console.log(state);
   };
 
   const eh_input_blur = () => {
