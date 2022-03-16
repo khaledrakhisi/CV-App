@@ -21,7 +21,6 @@ function Notes(props) {
           `${process.env.REACT_APP_BACKEND_URL}/notes`
         );
 
-        // console.log("here  " + responseData);
         setNotes(responseData.notes);
       } catch (err) {}
     };
