@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-// import "./Tooltip.css";
-
 const fadeIn = keyframes`
 0% {opacity: 0;}
 100%{
