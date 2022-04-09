@@ -11,7 +11,6 @@ describe("SAMPLE unit test", function () {
   // #1 should return home page
   it("Should return page not found", function (done) {
     // calling home page
-    // console.log(server.get("/"));
     server
       .get("/")
       .expect("Content-type", "application/json")
