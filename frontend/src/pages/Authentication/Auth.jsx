@@ -41,7 +41,6 @@ function Auth() {
   );
 
   const eh_form_submission = async (event) => {
-    
     event.preventDefault();
 
     if (isSignupMode) {
@@ -56,10 +55,9 @@ function Auth() {
           }),
           { "Content-Type": "application/json" }
         );
-       
+
         _authContext.login(resposeData.user);
       } catch (err) {}
-     
     } else {
       try {
         const resposeData = await sendRequest(
@@ -71,8 +69,7 @@ function Auth() {
           }),
           { "Content-Type": "application/json" }
         );
-       
-        // console.log(resposeData);
+
         _authContext.login(resposeData.user);
       } catch (err) {}
     }
@@ -110,10 +107,7 @@ function Auth() {
   return (
     <React.Fragment>
       {errorMessage && (
-        <ErrorModal
-          errorMessage={errorMessage}
-          onClose={clearError}
-        />
+        <ErrorModal errorMessage={errorMessage} onClose={clearError} />
       )}
       <Card className="authentication">
         {isLoading && <LoadingSpinner />}
