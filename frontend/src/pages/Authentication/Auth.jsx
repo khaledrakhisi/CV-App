@@ -87,7 +87,6 @@ function Auth() {
       },
       false
     );
-    // console.log(inputState.inputElements);
     setIsSignupMode(true);
   };
 
