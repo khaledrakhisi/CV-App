@@ -13,7 +13,7 @@ import "./CreateArea.css";
 
 const useStyles = makeStyles(() =>
   createStyles({
-    rotateIcon: {      
+    rotateIcon: {
       // transition: "transform .5s ease"
     },
     button: {
@@ -28,7 +28,7 @@ function CreateArea(props) {
   const { isLoading, errorMessage, sendRequest, clearError } = useHttpClient();
   const [isExpanded, setExpanded] = useState(false);
   const [note, setNote] = useState({
-    userId: "",    
+    userId: "",
     title: "",
     content: "",
     created_date: "",
@@ -55,8 +55,8 @@ function CreateArea(props) {
     setNote((prevNote) => {
       return {
         ...prevNote,
-        userId : "888",
-        created_date : moment().format('YYYY-MM-DD'),
+        userId: "888",
+        created_date: moment().format("YYYY-MM-DD"),
         [name]: value,
       };
     });
@@ -80,8 +80,7 @@ function CreateArea(props) {
       );
 
       props.onAdd(note);
-      // history.push("/");
-    } catch (err) {}    
+    } catch (err) {}
 
     // clearing controls for next use
     setNote({
@@ -96,21 +95,25 @@ function CreateArea(props) {
 
   return (
     <div>
-    <ErrorModal errorMessage={errorMessage} onClose={clearError} language={props.language}/>
+      <ErrorModal
+        errorMessage={errorMessage}
+        onClose={clearError}
+        language={props.language}
+      />
 
       <Grow in={true} style={{ transitionDelay: "300ms" }}>
         <form className="create-note">
-        {isLoading && <LoadingSpinner asOverlay />}
-        
+          {isLoading && <LoadingSpinner asOverlay />}
+
           {isExpanded && (
             <Zoom in={isExpanded}>
-            <input
-              id="title"
-              name="title"
-              onChange={eh_inputChange}
-              value={note.title}
-              placeholder={content.title}
-            />
+              <input
+                id="title"
+                name="title"
+                onChange={eh_inputChange}
+                value={note.title}
+                placeholder={content.title}
+              />
             </Zoom>
           )}
 
