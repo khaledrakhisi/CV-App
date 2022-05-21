@@ -32,9 +32,13 @@ function HomePage(props) {
   const [timeIRS, setTimeIRS] = useState("00:00:00 AM");
   const [timeCET, setTimeCET] = useState("00:00:00 AM");
 
+  momentTZ().add("Asia/Tehran|Iran");
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeIRS(moment(momentTZ().tz("Asia/Iran")).format("hh:mm:ss A"));
+      setTimeIRS(
+        moment(momentTZ().tz("Asia/Tehran|Iran")).format("hh:mm:ss A")
+      );
       setTimeCET(moment(momentTZ().tz("Europe/Berlin")).format("hh:mm:ss A"));
     }, 1000);
 
@@ -98,7 +102,9 @@ function HomePage(props) {
       <div
         className="top_container"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL + "images/homepage/himmel.png"})`,
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "images/homepage/himmel.png"
+          })`,
         }}
       >
         <h1 className="title">{content.title}</h1>
@@ -176,8 +182,8 @@ function HomePage(props) {
               <Zoom in={true}>
                 <div className="time">
                   <span className="time-clock"> {timeIRS} </span>
-                </div>        
-                </Zoom>      
+                </div>
+              </Zoom>
             </div>
           </div>
           <div className="land">
@@ -186,7 +192,7 @@ function HomePage(props) {
               src={process.env.PUBLIC_URL + "images/homepage/baum1.png"}
               alt=""
             />
-          
+
             <div className="brandenburg">
               <Tooltip right={0} bulbOffset={10} width={150} renderDelay={10}>
                 <span
@@ -210,7 +216,7 @@ function HomePage(props) {
               <Zoom in={true}>
                 <div className="time">
                   <span className="time-clock"> {timeCET} </span>
-                </div>      
+                </div>
               </Zoom>
             </div>
             {/* <Collapse in={true} style={{ transitionDelay: "3s" }}> */}
