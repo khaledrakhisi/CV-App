@@ -31,8 +31,8 @@ function Notes(props) {
     setNotes((prevNotes) => {
       console.log(prevNotes);
       return [...prevNotes, newNote];
-    });    
-  }
+    });
+  };
 
   const deleteNote = (id) => {
     setNotes((prevNotes) => {
@@ -40,7 +40,7 @@ function Notes(props) {
         return index !== id;
       });
     });
-  }  
+  };
 
   return (
     <React.Fragment>
@@ -65,7 +65,7 @@ function Notes(props) {
           })}
 
         {isLoading && (
-          <div className="center">            
+          <div className="center">
             <LoadingSpinner />
           </div>
         )}
