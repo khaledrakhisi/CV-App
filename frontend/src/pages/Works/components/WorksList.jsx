@@ -5,7 +5,6 @@ import Card from "../../../shared/components/UIElements/Card";
 import { AuthContext } from "../../../shared/components/context/AuthContext";
 import "./WorksList.css";
 
-
 function WorksList(props) {
   const auth = useContext(AuthContext);
 
@@ -26,24 +25,28 @@ function WorksList(props) {
 
   const populatedItems = (
     <ul className="place-list">
-      {props.items.map((item, i) => (    
-
-        <WorkItem
-          id={item.id}
-          key={item.id}
-          title={item.title}
-          description={item.description}
-          images={item.images}
-          contractor={item.contractor}
-          links={item.links}
-          duration={item.duration}
-          showEditButtons={!!auth.loggedinUser}
-          tags={item.tags}
-          displayDelay={ITEM_DISPLAY_DELAY * i}
-          technicalInfo={item.technicalInfo}
-        />  
-      
-      ))}
+      {props.items
+        .sort((a, b) => {
+          if (a.duration.start < b.duration.start) return 1;
+          if (a.duration.start > b.duration.start) return -1;
+          return 0;
+        })
+        .map((item, i) => (
+          <WorkItem
+            id={item.id}
+            key={item.id}
+            title={item.title}
+            description={item.description}
+            images={item.images}
+            contractor={item.contractor}
+            links={item.links}
+            duration={item.duration}
+            showEditButtons={!!auth.loggedinUser}
+            tags={item.tags}
+            displayDelay={ITEM_DISPLAY_DELAY * i}
+            technicalInfo={item.technicalInfo}
+          />
+        ))}
     </ul>
   );
 

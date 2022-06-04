@@ -5,6 +5,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Zoom from "@material-ui/core/Zoom";
 import { createStyles } from "@material-ui/styles";
 import { makeStyles } from "@material-ui/core";
+import moment from "moment";
 
 import Card from "../../../shared/components/UIElements/Card";
 import Button from "../../../shared/components/UIElements/Button";
@@ -69,11 +70,16 @@ function WorkItem(props) {
       <div className="place-item__tab">
         <h2>Links</h2>
         <ul className="place-item__modal-links">
-          {props.links.map((item, i)=>{
-            return <li key={i}><a target="_blank" rel="noreferrer" href={item.url}>{item.title}</a></li>
+          {props.links.map((item, i) => {
+            return (
+              <li key={i}>
+                <a target="_blank" rel="noreferrer" href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            );
           })}
         </ul>
-        
       </div>
     ),
     tab4: (
@@ -86,11 +92,11 @@ function WorkItem(props) {
           </li>
           <li>
             <span>Start Date: </span>
-            <strong>{props.duration.start}</strong>
+            <strong>{moment(props.duration.start).format("YYYY-MM-DD")}</strong>
           </li>
           <li>
             <span>End Date: </span>
-            <strong>{props.duration.end}</strong>
+            <strong>{moment(props.duration.end).format("YYYY-MM-DD")}</strong>
           </li>
         </ul>
         <p>Tags: {props.tags}</p>
