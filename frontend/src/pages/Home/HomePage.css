@@ -47,7 +47,7 @@
   font-size: 1rem;
   color: #069caa;
   font-weight: lighter;
-  line-height: 1;
+  line-height: 1;  
 }
 .title_like {
   position: absolute;
@@ -446,6 +446,7 @@
   }
   .title_description {
     font-size: 2rem;
+    margin-bottom: 5px;
   }
 
   .land{
