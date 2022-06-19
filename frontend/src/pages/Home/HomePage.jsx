@@ -162,7 +162,13 @@ function HomePage(props) {
               alt=""
             />
             <div className="azaditurm">
-              <Tooltip left={10} width={130} renderDelay={6} bulbOffset={100}>
+              <Tooltip
+                left={10}
+                top={50}
+                width={130}
+                renderDelay={6}
+                bulbOffset={100}
+              >
                 <span
                   style={{
                     color: "blue",
