@@ -186,7 +186,7 @@ function HomePage(props) {
               </Zoom>
             </div>
           </div>
-          <div className="land">
+          {/* <div className="land">
             <img
               className="baum1"
               src={process.env.PUBLIC_URL + "images/homepage/baum1.png"}
@@ -218,15 +218,13 @@ function HomePage(props) {
                   <span className="time-clock"> {timeCET} </span>
                 </div>
               </Zoom>
-            </div>
-            {/* <Collapse in={true} style={{ transitionDelay: "3s" }}> */}
+            </div>            
             <img
               className="baum4"
               src={process.env.PUBLIC_URL + "images/homepage/baum2.png"}
               alt=""
-            />
-            {/* </Collapse> */}
-          </div>
+            />            
+          </div> */}
         </div>
       </div>
     </React.Fragment>
