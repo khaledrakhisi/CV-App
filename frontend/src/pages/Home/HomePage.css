@@ -443,10 +443,11 @@
   }
   .title {
     font-size: 3.5rem;
+    margin-bottom: 5px;
   }
   .title_description {
     font-size: 2rem;
-    margin-bottom: 5px;
+    margin-top: 10px;
   }
 
   .land{
