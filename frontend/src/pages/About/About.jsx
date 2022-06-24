@@ -26,24 +26,22 @@ function About(props) {
   }, [sendRequest]);
   // useEffect with [] parameter means run just once.
 
-  if(!isLoading && resume){
+  if (!isLoading && resume) {
     let cntnt = {
-      EN:{
+      EN: {
         title1: "About me",
         title2: "Contact details",
-        download : "Download Resume",
-        bio:resume.main.EN.bio,            
+        download: "Download Resume",
+        bio: resume.main.EN.bio,
       },
-      DE:{
+      DE: {
         title1: "Über mich",
         title2: "Kontaktdetails",
-        download : "Lebenslauf herunterladenn",
-        bio:resume.main.DE.bio,            
-      }
-    }
-    // props.language === "EN" ? setContent(cntnt.EN) : setContent(cntnt.DE);
+        download: "Lebenslauf herunterladenn",
+        bio: resume.main.DE.bio,
+      },
+    };
     content = props.language === "EN" ? cntnt.EN : cntnt.DE;
-    // console.log(content);
   }
 
   if (!!errorMessage) {
@@ -66,7 +64,7 @@ function About(props) {
         </div>
       )}
 
-      {!isLoading && resume &&(
+      {!isLoading && resume && (
         <section id="about">
           <div className="row">
             <div className="column1">
@@ -76,45 +74,46 @@ function About(props) {
                 alt="Tim Baker Profile Pic"
               />
               <br />
-              <p>{resume.main.name}</p>                            
+              <p>{resume.main.name}</p>
             </div>
             <div className="column2">
               <h2>{content.title1}</h2>
 
               <p>{content.bio}</p>
-              
-                <h2>{content.title2}</h2>
-                <p className="address">
-                  <span>{resume.main.name}</span>
-                  <br />
-                  <span>
-                    {resume.main.address.street} {resume.main.address.city}{" "}
-                    {resume.main.address.state}, {resume.main.address.zip}
-                  </span>
-                  <br />
-                  <span>{resume.main.phone}</span>
-                  <br />
-                  <span>{resume.main.email}</span>
-                </p>
 
+              <h2>{content.title2}</h2>
+              <p className="address">
+                <span>{resume.main.name}</span>
                 <br />
-                <ul className="social_icons">
-                  {resume.main.social.map((item, i) => {
-                    return (
-                      <li key={i}>
-                        <a className="social_icon" href={item.url}>
-                          <i className={item.className}></i>
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>              
+                <span>
+                  {resume.main.address.street} {resume.main.address.city}{" "}
+                  {resume.main.address.state}, {resume.main.address.zip}
+                </span>
+                <br />
+                <span>{resume.main.phone}</span>
+                <br />
+                <span>{resume.main.email}</span>
+              </p>
+
+              <br />
+              <ul className="social_icons">
+                {resume.main.social.map((item, i) => {
+                  return (
+                    <li key={i}>
+                      <a className="social_icon" href={item.url}>
+                        <i className={item.className}></i>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
               <div className="download">
                 <a href={resume.main.resumedownload} className="button">
-                <i className="fas fa-cloud-download-alt"></i>  {content.download}
+                  <i className="fas fa-cloud-download-alt"></i>{" "}
+                  {content.download}
                 </a>
               </div>
-            </div>            
+            </div>
           </div>
         </section>
       )}

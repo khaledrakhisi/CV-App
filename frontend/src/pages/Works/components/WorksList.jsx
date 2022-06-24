@@ -14,7 +14,6 @@ function WorksList(props) {
         <div className="place-list center">
           <Card>
             <h2>The list is empty.</h2>
-            {/* <Button to="/places/new">Create One?</Button> */}
           </Card>
         </div>
       </React.Fragment>
